@@ -106,7 +106,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             }
         }
         if (requestCode == 10) {
-            if (!mBluetoothAdapter.isEnabled()) {
+            if (mBluetoothAdapter != null && !mBluetoothAdapter.isEnabled()) {
                 finish();
             }
         }
