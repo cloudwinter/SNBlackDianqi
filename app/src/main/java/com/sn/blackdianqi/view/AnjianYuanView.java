@@ -28,6 +28,10 @@ public class AnjianYuanView extends LinearLayout {
 
     int bgNormalRes = -1;
     int bgSelectedRes = -1;
+    /**
+     * 和父类的比例
+     */
+    float pRatio = 1f;
 
     public AnjianYuanView(Context context) {
         super(context,null);
@@ -48,6 +52,7 @@ public class AnjianYuanView extends LinearLayout {
             bgNormalRes = typedArray.getResourceId(R.styleable.AnjianYuanView_bgnormal,-1);
             bgSelectedRes = typedArray.getResourceId(R.styleable.AnjianYuanView_bgselected,-1);
             title = typedArray.getString(R.styleable.AnjianYuanView_title);
+            pRatio = typedArray.getFloat(R.styleable.AnjianYuanView_pratio, 1f);
             LogUtils.i(TAG, "title:" + title);
         }
         setOrientation(VERTICAL);
@@ -75,5 +80,26 @@ public class AnjianYuanView extends LinearLayout {
                 setBackground(ContextCompat.getDrawable(mContext,bgNormalRes));
             }
         }
+    }
+
+
+    @SuppressWarnings("unused")
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        // We depend on the container to specify the layout size of
+        // our view. We can't really know what it is since we will be
+        // adding and removing different arbitrary views and do not
+        // want the layout to change as this happens.
+        setMeasuredDimension(getDefaultSize(0, widthMeasureSpec),
+                getDefaultSize(0, heightMeasureSpec));
+        // Children are just made to fill our space.
+        int childWidthSize = getMeasuredWidth();
+        int childHeightSize = getMeasuredHeight();
+
+        childWidthSize = (int) (childWidthSize * pRatio);
+
+        // 高度和宽度一样
+        heightMeasureSpec = widthMeasureSpec = MeasureSpec.makeMeasureSpec(
+                childWidthSize, MeasureSpec.EXACTLY);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }

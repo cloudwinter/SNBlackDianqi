@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sn.blackdianqi.view.SquareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,16 +10,15 @@
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/anjian_icon_margin_top"
-        android:background="@mipmap/ic_kandianshi_xiao"/>
+        android:background="@mipmap/xr_kandianshi_xiao"/>
     
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="看电视"
-        android:textSize="@dimen/sp_12"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/text_black"
+        android:textSize="@dimen/anjian_title_text_size"
+        android:textColor="@color/text_white"
         />
 
-</LinearLayout>
+</com.sn.blackdianqi.view.SquareLinearLayout>

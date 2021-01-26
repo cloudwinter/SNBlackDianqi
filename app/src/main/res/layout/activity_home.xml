@@ -5,7 +5,7 @@
     android:background="@mipmap/ic_bg"
     android:orientation="vertical">
 
-    <com.sn.dianqi.view.TranslucentActionBar
+    <com.sn.blackdianqi.view.TranslucentActionBar
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.sn.dianqi.view.NoScrollViewPager
+        <com.sn.blackdianqi.view.NoScrollViewPager
             android:id="@+id/vp_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -14,10 +14,13 @@
     <color name="text_black">#0C0B0E</color>
     <color name="text_white">#FFFFFF</color>
     <color name="text_green">#59B84D</color>
+    <color name="text_yuan">#41B67D</color>
     <color name="text_orange">#DF9214</color>
     <color name="text_yellow">#D9E548</color>
     <color name="F14C27">#F14C27</color>
     <color name="tab_selected">#59B84D</color>
     <color name="tab_normal">#C9C9C9</color>
+    <color name="anjian_selected">#41b67c</color>
+    <color name="anjian_normal">#1E1F24</color>
     <color name="FA3008">#FA3008</color>
 </resources>

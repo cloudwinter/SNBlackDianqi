@@ -425,25 +425,23 @@
     <dimen name="sp_48">48dp</dimen>
 
     <!-- 顶部圆区域 -->
-    <dimen name="dingbu_yuan_size">234dp</dimen>
-    <dimen name="dingbu_yuan_ren_size">102dp</dimen>
-    <dimen name="dingbu_yuan_title_size">14dp</dimen>
+    <dimen name="dingbu_yuan_size">200dp</dimen>
+    <dimen name="dingbu_yuan_ren_size">80dp</dimen>
+    <dimen name="dingbu_yuan_title_size">12dp</dimen>
 
-
-    <!-- 按键记忆区域 -->
+    <!-- 快捷 -->
     <dimen name="jiyi_margin_sides">20dp</dimen>
     <dimen name="jiyi_width">162dp</dimen>
     <dimen name="jiyi_height">60dp</dimen>
     <dimen name="jiyi_icon_left">20dp</dimen>
     <dimen name="jiyi_title_left">10dp</dimen>
-    <dimen name="jiyi_title_size">14dp</dimen>
+    <dimen name="jiyi_title_size">12dp</dimen>
     <dimen name="jiyi_middle">10dp</dimen>
 
-    <!-- 按键圆区域 -->
     <dimen name="anjian_yuan_size">85dp</dimen>
-    <dimen name="anjian_margin_sides">33dp</dimen>
-    <dimen name="anjian_yuan_middle">25dp</dimen>
+    <dimen name="anjian_margin_sides">30dp</dimen>
+    <dimen name="anjian_yuan_middle">10dp</dimen>
     <dimen name="anjian_icon_margin_top">10dp</dimen>
-    <dimen name="anjian_title_text_size">12dp</dimen>
+    <dimen name="anjian_title_text_size">10dp</dimen>
 
 </resources>

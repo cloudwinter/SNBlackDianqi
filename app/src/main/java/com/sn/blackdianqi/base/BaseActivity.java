@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
@@ -38,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
         PreferenceUtil.init(this);
         //根据上次的语言设置，重新设置语言
         switchLanguage(Prefer.getInstance().getSelectedLanguage());
-        LogUtils.d("BaseActivity","当前系统的版本为："+ Build.VERSION.SDK_INT);
+        LogUtils.d("BaseActivity", "当前系统的版本为：" + Build.VERSION.SDK_INT);
     }
 
     @Override
@@ -121,17 +122,14 @@ public class BaseActivity extends AppCompatActivity {
         Resources resources = getResources();
         Configuration config = resources.getConfiguration();
         DisplayMetrics dm = resources.getDisplayMetrics();
-        if (language.equals("en")) {
-            config.locale = Locale.ENGLISH;
-        } else {
-            config.locale = Locale.SIMPLIFIED_CHINESE;
-        }
+        config.locale = Locale.ENGLISH;
         if (resources.getConfiguration().fontScale != 1) {
             config.fontScale = 1.0f;
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            config.densityDpi = LocaleUtils.getDefaultDisplayDensity();
-        }
+        Log.d("BaseActivity", "densityDpi="+config.densityDpi);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            config.densityDpi = LocaleUtils.getDefaultDisplayDensity();
+//        }
         resources.updateConfiguration(config, dm);
 
     }

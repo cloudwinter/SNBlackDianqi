@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -19,7 +20,7 @@ import androidx.core.content.ContextCompat;
 /**
  * 记忆view
  */
-public class JiyiView extends LinearLayout {
+public class JiyiView extends RelativeLayout {
 
     public static final String TAG = "JiyiView";
 
@@ -50,7 +51,7 @@ public class JiyiView extends LinearLayout {
             title = typedArray.getString(R.styleable.JiyiView_title);
             LogUtils.i(TAG, "title:" + title);
         }
-        setOrientation(HORIZONTAL);
+        //setOrientation(HORIZONTAL);
         View contentView = inflate(getContext(), R.layout.view_jiyi, this);
         imageView = contentView.findViewById(R.id.img_dian);
         titleTextView = contentView.findViewById(R.id.text_title);
@@ -64,12 +65,12 @@ public class JiyiView extends LinearLayout {
     public void setSelected(boolean selected) {
         super.setSelected(selected);
         if (selected) {
-            imageView.setImageResource(R.mipmap.ic_dian_selected);
+            imageView.setImageResource(R.mipmap.dian_green);
             if (bgSelectedRes != -1) {
                 setBackground(ContextCompat.getDrawable(mContext,bgSelectedRes));
             }
         } else {
-            imageView.setImageResource(R.mipmap.ic_dian_normal);
+            imageView.setImageResource(R.mipmap.dian_black);
             if (bgNormalRes != -1) {
                 setBackground(ContextCompat.getDrawable(mContext,bgNormalRes));
             }
