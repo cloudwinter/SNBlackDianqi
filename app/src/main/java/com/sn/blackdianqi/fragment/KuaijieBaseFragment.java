@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +15,13 @@ import android.view.ViewGroup;
 
 import com.sn.blackdianqi.MyApplication;
 import com.sn.blackdianqi.R;
+import com.sn.blackdianqi.RunningContext;
 import com.sn.blackdianqi.base.BaseFragment;
+import com.sn.blackdianqi.bean.DeviceBean;
 import com.sn.blackdianqi.blue.BluetoothLeService;
 import com.sn.blackdianqi.util.BlueUtils;
 import com.sn.blackdianqi.util.LogUtils;
+import com.sn.blackdianqi.util.Prefer;
 import com.sn.blackdianqi.util.ToastUtils;
 
 import androidx.annotation.NonNull;
@@ -28,17 +32,25 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
     public static final String TAG = "KuaijieBaseFragment";
 
     /**
+     * 记忆询问码code
+     */
+    protected final static long MGS_ASK_STATUS_CODE = 7;
+
+    /**
      * 默认间隔
      */
     protected final static long DEFAULT_INTERVAL = 2000;
 
-    private Handler mHandler = new Handler();
+    // 蓝牙设备名称
+    protected String blueDeviceName;
+
 
     // 特征值
     protected BluetoothGattCharacteristic characteristic;
 
     /**
      * 蓝牙回传数据
+     *
      * @param data
      */
     abstract void handleReceiveData(String data);
@@ -48,17 +60,28 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
      */
     abstract void askStatus();
 
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().registerReceiver(mKuaijieReceiver, makeGattUpdateIntentFilter());
         characteristic = MyApplication.getInstance().gattCharacteristic;
-        mHandler.postDelayed(new Runnable() {
+        DeviceBean deviceBean = Prefer.getInstance().getConnectedDevice();
+        if (deviceBean != null) {
+            blueDeviceName = deviceBean.getTitle();
+        }
+        RunningContext.threadPool().execute(new Runnable() {
             @Override
             public void run() {
-                askStatus();
+                try {
+                    Thread.sleep(1000L);
+                    askStatus();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        },1000L);
+        });
     }
 
 
@@ -68,6 +91,30 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
         super.onDestroy();
     }
 
+
+    protected Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            if (msg.what == MGS_ASK_STATUS_CODE) {
+                String cmd = (String) msg.obj;
+                sendBlueCmd(cmd);
+            }
+        }
+    };
+
+
+    /**
+     * 发送记忆询问码的命令
+     * @param cmd
+     */
+    protected void sendAskBlueCmd(final String cmd) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                sendBlueCmd(cmd);
+            }
+        });
+    }
 
     /**
      * 发送蓝牙命令

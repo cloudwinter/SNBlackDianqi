@@ -87,66 +87,62 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="@dimen/anjian_margin_sides"
-        android:layout_marginRight="@dimen/anjian_margin_sides"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="37"/>
 
-            <com.sn.blackdianqi.view.AnjianYuanView
-                android:id="@+id/view_kandianshi"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:bgnormal="@drawable/bg_yuan_normal"
-                app:bgselected="@drawable/bg_yuan_selected"
-                app:icon="@mipmap/xr_kandianshi_xiao"
-                app:title="@string/kandianshi"
-                app:pratio="0.9"/>
-        </com.sn.blackdianqi.view.SquareLinearLayout>
 
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <com.sn.blackdianqi.view.AnjianYuanView
+            android:id="@+id/view_kandianshi"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
+            app:bgnormal="@drawable/bg_yuan_normal"
+            app:bgselected="@drawable/bg_yuan_selected"
+            app:icon="@mipmap/xr_kandianshi_xiao"
+            app:title="@string/kandianshi"
+            />
+
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="30"/>
 
-            <com.sn.blackdianqi.view.AnjianYuanView
-                android:id="@+id/view_lingyali"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:bgnormal="@drawable/bg_yuan_normal"
-                app:bgselected="@drawable/bg_yuan_selected"
-                app:icon="@mipmap/xr_lingyali_xiao"
-                app:title="@string/lingyali"
-                app:pratio="0.9"/>
 
-        </com.sn.blackdianqi.view.SquareLinearLayout>
+        <com.sn.blackdianqi.view.AnjianYuanView
+            android:id="@+id/view_lingyali"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
+            app:bgnormal="@drawable/bg_yuan_normal"
+            app:bgselected="@drawable/bg_yuan_selected"
+            app:icon="@mipmap/xr_lingyali_xiao"
+            app:title="@string/lingyali"
+            />
 
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="30"/>
 
-            <com.sn.blackdianqi.view.AnjianYuanView
-                android:id="@+id/view_zhihan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:bgnormal="@drawable/bg_yuan_normal"
-                app:bgselected="@drawable/bg_yuan_selected"
-                app:icon="@mipmap/xr_zhihan_xiao"
-                app:title="@string/zhihan"
-                app:pratio="0.9"/>
 
-        </com.sn.blackdianqi.view.SquareLinearLayout>
+        <com.sn.blackdianqi.view.AnjianYuanView
+            android:id="@+id/view_zhihan"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
+            app:bgnormal="@drawable/bg_yuan_normal"
+            app:bgselected="@drawable/bg_yuan_selected"
+            app:icon="@mipmap/xr_zhihan_xiao"
+            app:title="@string/zhihan"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="37"/>
+
 
 
     </LinearLayout>
@@ -155,68 +151,61 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="@dimen/anjian_margin_sides"
-        android:layout_marginRight="@dimen/anjian_margin_sides"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="37"/>
 
         <com.sn.blackdianqi.view.AnjianYuanView
             android:id="@+id/view_fuyuan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
             app:title="@string/fuyuan"
             app:icon="@mipmap/xr_fuyuan_xiao"
             app:bgnormal="@drawable/bg_yuan_normal"
             app:bgselected="@drawable/bg_yuan_selected"
-            app:pratio="0.9"
             />
-        </com.sn.blackdianqi.view.SquareLinearLayout>
 
-
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="30"/>
+
+
         <com.sn.blackdianqi.view.AnjianYuanView
             android:id="@+id/view_tingyinyue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
             app:title="@string/fuyuan"
             app:icon="@mipmap/xr_tingyingyue_xiao"
             app:bgnormal="@drawable/bg_yuan_normal"
             app:bgselected="@drawable/bg_yuan_selected"
-            app:pratio="0.9"
             />
-        </com.sn.blackdianqi.view.SquareLinearLayout>
 
-        <com.sn.blackdianqi.view.SquareLinearLayout
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:layout_weight="30"/>
+
 
         <com.sn.blackdianqi.view.AnjianYuanView
             android:id="@+id/view_tuibufangsong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/anjian_yuan_size"
+            android:layout_height="@dimen/anjian_yuan_size"
             app:title="@string/fuyuan"
             app:icon="@mipmap/xr_tuibufangsong_xiao"
             app:bgnormal="@drawable/bg_yuan_normal"
             app:bgselected="@drawable/bg_yuan_selected"
-            app:pratio="0.9"
             />
-        </com.sn.blackdianqi.view.SquareLinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="37"/>
 
     </LinearLayout>
 

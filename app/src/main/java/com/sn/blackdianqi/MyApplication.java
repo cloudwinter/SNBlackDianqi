@@ -74,9 +74,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         LogUtils.e("---", "[MyApplication] onCreate");
         super.onCreate();
-
-
         instance = this;
+        RunningContext.init(this);
         AppUncaughtExceptionHandler.getInstance().init(this);
         initImageLoader();
         initFilePath();

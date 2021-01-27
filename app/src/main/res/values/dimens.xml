@@ -437,7 +437,7 @@
     <dimen name="jiyi_icon_left">20dp</dimen>
     <dimen name="jiyi_title_left">10dp</dimen>
     <dimen name="jiyi_title_size">14dp</dimen>
-    <dimen name="jiyi_middle">10dp</dimen>
+    <dimen name="jiyi_middle">15dp</dimen>
 
     <!-- 按键圆区域 -->
     <dimen name="anjian_yuan_size">85dp</dimen>
@@ -445,5 +445,8 @@
     <dimen name="anjian_yuan_middle">25dp</dimen>
     <dimen name="anjian_icon_margin_top">10dp</dimen>
     <dimen name="anjian_title_text_size">12dp</dimen>
+
+    <!-- 按键圆区域 -->
+    <dimen name="anjian_middle_yuan_size">102dp</dimen>
 
 </resources>

@@ -1,9 +1,5 @@
 package com.sn.blackdianqi.fragment;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,9 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.sn.blackdianqi.R;
-import com.sn.blackdianqi.blue.BluetoothLeService;
+import com.sn.blackdianqi.bean.DeviceBean;
 import com.sn.blackdianqi.util.LogUtils;
 import com.sn.blackdianqi.view.AnjianYuanView;
 import com.sn.blackdianqi.view.JiyiView;
@@ -29,9 +24,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 快捷K1
+ * 快捷K2
  */
-public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTouchListener {
+public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTouchListener {
 
 
     @BindView(R.id.img_anjian_top_icon)
@@ -49,16 +44,12 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     AnjianYuanView kandianshiView;
     @BindView(R.id.view_lingyali)
     AnjianYuanView lingyaliView;
-
     @BindView(R.id.view_zhihan)
     AnjianYuanView zhihanView;
+
     @BindView(R.id.view_fuyuan)
     AnjianYuanView fuyuanView;
 
-    @BindView(R.id.view_tingyinyue)
-    AnjianYuanView tingyinyueView;
-    @BindView(R.id.view_tuibufangsong)
-    AnjianYuanView tuibufangsongView;
 
     private long eventDownTime = 0L;
 
@@ -67,7 +58,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        View view = inflater.inflate(R.layout.fragment_kuaijie_k1, container, false);
+        View view = inflater.inflate(R.layout.fragment_kuaijie_k2, container, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,30 +80,29 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
         lingyaliView.setOnTouchListener(this);
         zhihanView.setOnTouchListener(this);
         fuyuanView.setOnTouchListener(this);
-        tingyinyueView.setOnTouchListener(this);
-        tuibufangsongView.setOnTouchListener(this);
 
     }
 
     /**
      * 设置顶部icon和title
+     *
      * @param iconResId
      * @param titleResId
      */
-    private void setTopIconAndTitle(int iconResId,int titleResId) {
-        topIconImgView.setBackground(ContextCompat.getDrawable(getContext(),iconResId));
+    private void setTopIconAndTitle(int iconResId, int titleResId) {
+        topIconImgView.setBackground(ContextCompat.getDrawable(getContext(), iconResId));
         topTitleTextView.setText(getString(titleResId));
     }
 
 
     /**
      * 设置顶部的title
+     *
      * @param titleResId
      */
     private void setTitle(int titleResId) {
         topTitleTextView.setText(getString(titleResId));
     }
-
 
 
     private void jiyi2LongClick() {
@@ -134,29 +124,53 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     }
 
 
-
     @Override
     protected void handleReceiveData(String data) {
-        if (data.contains("FF FF FF FF 03 12 00 AA")) {
-            // 记忆1有记忆返回码
-            jiyi1View.setSelected(true);
+        if (isJIYIxunwenma2()) {
+            if (data.contains("FF FF FF FF 03 06 00 0A")) {
+                // 记忆1有记忆返回码
+                jiyi1View.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 06 00 0B")) {
+                // 记忆2有记忆返回码
+                jiyi2View.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 06 00 05")) {
+                // 看电视
+                kandianshiView.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 06 00 09")) {
+                // 零压力
+                lingyaliView.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 06 00 0F")) {
+                // 止鼾
+                zhihanView.setSelected(true);
+            }
+
+        } else {
+            if (data.contains("FF FF FF FF 03 12 00 AA ")) {
+                // 记忆1有记忆返回码
+                jiyi1View.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 12 00 AB")) {
+                // 记忆2有记忆返回码
+                jiyi2View.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 12 00 AB")) {
+                // 看电视
+                kandianshiView.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 12 00 A9")) {
+                // 零压力
+                lingyaliView.setSelected(true);
+            }
+            if (data.contains("FF FF FF FF 03 12 00 AF")) {
+                // 止鼾
+                zhihanView.setSelected(true);
+            }
         }
-        if (data.contains("FF FF FF FF 03 12 00 AB")) {
-            // 记忆2有记忆返回码
-            jiyi2View.setSelected(true);
-        }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
-            // 看电视
-            kandianshiView.setSelected(true);
-        }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
-            // 零压力
-            lingyaliView.setSelected(true);
-        }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
-            // 止鼾
-            zhihanView.setSelected(true);
-        }
+
 
 
         // 记忆1 按键回码
@@ -203,27 +217,42 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     @Override
     void askStatus() {
         try {
-            // 记忆1
-            sendAskBlueCmd("FF FF FF FF 03 00 28 00 09 1F 0E");
-            Thread.sleep(300L);
-            // 记忆2
-            sendAskBlueCmd("FF FF FF FF 03 00 31 00 09 CE C9");
-            Thread.sleep(300L);
-            // 看电视
-            sendAskBlueCmd("FF FF FF FF 03 00 16 00 09 7E C2");
-            Thread.sleep(300L);
-            // 零压力
-            sendAskBlueCmd("FF FF FF FF 03 00 1F 00 09 AE C0");
-            Thread.sleep(300L);
-            // 止鼾
-            sendAskBlueCmd("FF FF FF FF 03 00 3A 00 09 BF 0B");
+            if (isJIYIxunwenma2()) {
+                // 记忆1
+                sendAskBlueCmd("FF FF FF FF 03 00 28 00 03 9F 09");
+                Thread.sleep(300L);
+                // 记忆2
+                sendAskBlueCmd("FF FF FF FF 03 00 30 00 03 1F 0E");
+                Thread.sleep(300L);
+                // 看电视
+                sendAskBlueCmd("FF FF FF FF 03 00 18 00 03 9F 06");
+                Thread.sleep(300L);
+                // 零压力
+                sendAskBlueCmd("FF FF FF FF 03 00 20 00 03 1E CB");
+                Thread.sleep(300L);
+                // 止鼾
+                sendAskBlueCmd("FF FF FF FF 03 00 38 00 03 9E CC");
+            } else {
+                // 记忆1
+                sendAskBlueCmd("FF FF FF FF 03 00 28 00 09 1F 0E");
+                Thread.sleep(300L);
+                // 记忆2
+                sendAskBlueCmd("FF FF FF FF 03 00 31 00 09 CE C9");
+                Thread.sleep(300L);
+                // 看电视
+                sendAskBlueCmd("FF FF FF FF 03 00 16 00 09 7E C2");
+                Thread.sleep(300L);
+                // 零压力
+                sendAskBlueCmd("FF FF FF FF 03 00 1F 00 09 AE C0");
+                Thread.sleep(300L);
+                // 止鼾
+                sendAskBlueCmd("FF FF FF FF 03 00 3A 00 09 BF 0B");
+            }
         } catch (Exception e) {
             LogUtils.e(TAG, "askStatus 异常" + e.getMessage());
             e.printStackTrace();
         }
     }
-
-
 
 
     @Override
@@ -261,7 +290,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                 }
                 break;
             case R.id.view_kandianshi:
-                setTopIconAndTitle(R.mipmap.xr_kandianshi_da,R.string.kandianshi);
+                setTopIconAndTitle(R.mipmap.xr_kandianshi_da, R.string.kandianshi);
                 if (MotionEvent.ACTION_DOWN == action) {
                     eventDownTime = System.currentTimeMillis();
                     timeHandler.sendEmptyMessageDelayed(KANDIANSHI_WHAT, DEFAULT_INTERVAL);
@@ -278,7 +307,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                 }
                 break;
             case R.id.view_lingyali:
-                setTopIconAndTitle(R.mipmap.xr_lingyali_da,R.string.lingyali);
+                setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.lingyali);
                 if (MotionEvent.ACTION_DOWN == action) {
                     eventDownTime = System.currentTimeMillis();
                     timeHandler.sendEmptyMessageDelayed(LINGYALI_WHAT, DEFAULT_INTERVAL);
@@ -286,7 +315,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                     timeHandler.removeMessages(LINGYALI_WHAT);
                     if (isShortClick()) {
                         // 短按
-                        setTopIconAndTitle(R.mipmap.xr_lingyali_da,R.string.lingyali);
+                        setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.lingyali);
                         if (lingyaliView.isSelected()) {
                             sendBlueCmd("FF FF FF FF 05 00 00 91 09 7A 96");
                         } else {
@@ -296,7 +325,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                 }
                 break;
             case R.id.view_zhihan:
-                setTopIconAndTitle(R.mipmap.xr_zhihan_da,R.string.zhihan);
+                setTopIconAndTitle(R.mipmap.xr_zhihan_da, R.string.zhihan);
                 if (MotionEvent.ACTION_DOWN == action) {
                     eventDownTime = System.currentTimeMillis();
                     timeHandler.sendEmptyMessageDelayed(ZHIHAN_WHAT, DEFAULT_INTERVAL);
@@ -304,7 +333,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                     timeHandler.removeMessages(ZHIHAN_WHAT);
                     if (isShortClick()) {
                         // 短按
-                        setTopIconAndTitle(R.mipmap.xr_zhihan_da,R.string.zhihan);
+                        setTopIconAndTitle(R.mipmap.xr_zhihan_da, R.string.zhihan);
                         if (zhihanView.isSelected()) {
                             sendBlueCmd("FF FF FF FF 05 00 00 F1 0F D2 94");
                         } else {
@@ -314,21 +343,9 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                 }
                 break;
             case R.id.view_fuyuan:
-                setTopIconAndTitle(R.mipmap.xr_fuyuan_da,R.string.fuyuan);
+                setTopIconAndTitle(R.mipmap.xr_fuyuan_da, R.string.fuyuan);
                 if (MotionEvent.ACTION_DOWN == action) {
                     sendBlueCmd("FF FF FF FF 05 00 00 00 08 D6 C6");
-                }
-                break;
-            case R.id.view_tingyinyue:
-                setTopIconAndTitle(R.mipmap.xr_tingyinyue_da,R.string.tingyinyue);
-                if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 28 D7 1E");
-                }
-                break;
-            case R.id.view_tuibufangsong:
-                setTopIconAndTitle(R.mipmap.xr_tuibufangsong_da,R.string.tuibufangsong);
-                if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 29 16 DE");
                 }
                 break;
         }
@@ -349,7 +366,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
      * 零压力 4
      * 止鼾 5
      */
-    private Handler timeHandler = new Handler(){
+    private Handler timeHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -376,7 +393,6 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     };
 
 
-
     private void lingyaliLongClick() {
         if (lingyaliView.isSelected()) {
             // 有记忆
@@ -385,7 +401,6 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
             sendBlueCmd("FF FF FF FF 05 00 00 90 09 7B 06");
         }
     }
-
 
 
     private void zhihanLongClick() {
@@ -418,12 +433,26 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
 
     /**
      * 单位是毫秒
+     *
      * @param startTime
      * @param endTime
      * @return
      */
-    private long getInterval(long startTime,long endTime) {
+    private long getInterval(long startTime, long endTime) {
         long interval = endTime - startTime;
         return interval;
+    }
+
+
+    /**
+     * 是否是记忆询问码2
+     *
+     * @return
+     */
+    private boolean isJIYIxunwenma2() {
+        if ("QMS-MQ".equals(blueDeviceName) || "QMS2".equals(blueDeviceName)) {
+            return true;
+        }
+        return false;
     }
 }

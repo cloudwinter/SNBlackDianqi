@@ -28,10 +28,6 @@ public class AnjianYuanView extends LinearLayout {
 
     int bgNormalRes = -1;
     int bgSelectedRes = -1;
-    /**
-     * 和父类的比例
-     */
-    float pRatio = 1f;
 
     public AnjianYuanView(Context context) {
         super(context,null);
@@ -52,8 +48,6 @@ public class AnjianYuanView extends LinearLayout {
             bgNormalRes = typedArray.getResourceId(R.styleable.AnjianYuanView_bgnormal,-1);
             bgSelectedRes = typedArray.getResourceId(R.styleable.AnjianYuanView_bgselected,-1);
             title = typedArray.getString(R.styleable.AnjianYuanView_title);
-            pRatio = typedArray.getFloat(R.styleable.AnjianYuanView_pratio, 1f);
-            LogUtils.i(TAG, "title:" + title);
         }
         setOrientation(VERTICAL);
         View contentView = inflate(mContext,R.layout.view_anjianyuan,this);
@@ -94,8 +88,6 @@ public class AnjianYuanView extends LinearLayout {
         // Children are just made to fill our space.
         int childWidthSize = getMeasuredWidth();
         int childHeightSize = getMeasuredHeight();
-
-        childWidthSize = (int) (childWidthSize * pRatio);
 
         // 高度和宽度一样
         heightMeasureSpec = widthMeasureSpec = MeasureSpec.makeMeasureSpec(
