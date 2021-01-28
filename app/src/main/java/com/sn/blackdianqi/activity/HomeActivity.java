@@ -24,6 +24,7 @@ import com.sn.blackdianqi.blue.BluetoothLeService;
 import com.sn.blackdianqi.fragment.KuaijieK1Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK4Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW1Fragment;
+import com.sn.blackdianqi.fragment.WeitiaoW7Fragment;
 import com.sn.blackdianqi.util.LogUtils;
 import com.sn.blackdianqi.util.Prefer;
 import com.sn.blackdianqi.util.ToastUtils;
@@ -153,7 +154,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
         fragments = new ArrayList<>();
         fragments.add(new KuaijieK4Fragment());
-        fragments.add(new WeitiaoW1Fragment());
+        fragments.add(new WeitiaoW7Fragment());
         fragments.add(new KuaijieK1Fragment());
         fragments.add(new KuaijieK1Fragment());
         tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), fragments);

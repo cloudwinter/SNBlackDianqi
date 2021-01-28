@@ -91,7 +91,7 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     }
 
     private void initView() {
-        fentiLayout.setOnTouchListener(this);
+//        fentiLayout.setOnTouchListener(this);
         fentiView.setOnTouchListener(this);
         fentiKandianshiLeftView.setOnTouchListener(this);
         fentiKandianshiRightView.setOnTouchListener(this);
@@ -100,7 +100,7 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         fentiFuyuanLeftView.setOnTouchListener(this);
         fentiFuyuanRightView.setOnTouchListener(this);
 
-        tongbuLayout.setOnTouchListener(this);
+//        tongbuLayout.setOnTouchListener(this);
         tongbuView.setOnTouchListener(this);
         tongbuKandianshiView.setOnTouchListener(this);
         tongbuLingyaliView.setOnTouchListener(this);

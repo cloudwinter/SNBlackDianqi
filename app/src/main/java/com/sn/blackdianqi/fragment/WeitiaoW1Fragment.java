@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.sn.blackdianqi.R;
 import com.sn.blackdianqi.view.AnjianChangTuoYuanView;
 import com.sn.blackdianqi.view.AnjianWeitiaoView;
+import com.sn.blackdianqi.view.ChildTouchListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -89,7 +90,7 @@ public class WeitiaoW1Fragment extends WeitiaoBaseFragment implements View.OnTou
         toubuxunhuanView.setOnTouchListener(this);
         tuibuxunhuanView.setOnTouchListener(this);
 
-        beibutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        beibutiaozhengView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
@@ -117,7 +118,7 @@ public class WeitiaoW1Fragment extends WeitiaoBaseFragment implements View.OnTou
             }
         });
 
-        tunbutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        tunbutiaozhengView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
@@ -145,7 +146,7 @@ public class WeitiaoW1Fragment extends WeitiaoBaseFragment implements View.OnTou
             }
         });
 
-        tuobutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        tuobutiaozhengView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
@@ -173,7 +174,7 @@ public class WeitiaoW1Fragment extends WeitiaoBaseFragment implements View.OnTou
             }
         });
 
-        tuibutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        tuibutiaozhengView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {

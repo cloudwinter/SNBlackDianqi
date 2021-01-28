@@ -48,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:visibility="visible">
 
@@ -70,7 +71,8 @@
                 android:layout_height="@dimen/anjian_tuoyuan_height"
                 android:layout_marginLeft="@dimen/anjian_margin_size"
                 android:layout_marginRight="@dimen/anjian_margin_size"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                >
 
 
                 <com.sn.blackdianqi.view.AnjianTuoYuanView
@@ -192,6 +194,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:visibility="gone">
 

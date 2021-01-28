@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 /**
  * 椭圆按键
  */
-public class AnjianWeitiaoView extends LinearLayout implements View.OnTouchListener {
+public class AnjianDuanWeitiaoView extends LinearLayout implements View.OnTouchListener {
 
     public static final String TAG = "AnjianChangTuoYuanView";
 
@@ -34,11 +34,11 @@ public class AnjianWeitiaoView extends LinearLayout implements View.OnTouchListe
 
     int bgNormalRes = -1;
 
-    public AnjianWeitiaoView(Context context) {
+    public AnjianDuanWeitiaoView(Context context) {
         super(context, null);
     }
 
-    public AnjianWeitiaoView(Context context, AttributeSet attrs) {
+    public AnjianDuanWeitiaoView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         init(attrs);
@@ -55,7 +55,7 @@ public class AnjianWeitiaoView extends LinearLayout implements View.OnTouchListe
             LogUtils.i(TAG, "title:" + title);
         }
         setOrientation(HORIZONTAL);
-        View contentView = inflate(getContext(), R.layout.view_anjian_weitiao, this);
+        View contentView = inflate(getContext(), R.layout.view_anjian_duan_weitiao, this);
         iconImageView = contentView.findViewById(R.id.img_xr);
         titleTextView = contentView.findViewById(R.id.text_title);
         sanjiaoTopLayout = contentView.findViewById(R.id.layout_sanjiao_top);

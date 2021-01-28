@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.sn.blackdianqi.R;
 import com.sn.blackdianqi.view.AnjianWeitiaoView;
+import com.sn.blackdianqi.view.ChildTouchListener;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -58,7 +59,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
     }
 
     private void initView() {
-        beibutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        beibutiaozhengView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
@@ -87,7 +88,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
         });
 
 
-        zhengtishengjiangView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        zhengtishengjiangView.setChildTouchListener(new ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
