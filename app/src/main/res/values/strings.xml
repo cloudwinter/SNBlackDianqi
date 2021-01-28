@@ -62,12 +62,14 @@
     <string name="toubutiaozheng">HEAD</string>
     <string name="tuibutiaozheng">LEG</string>
     <string name="yaobutiaozheng">LOIN</string>
+    <string name="beituitiaozheng">BACK LEG</string>
 
     <string name="quanshenxunhuan">BODY CYCLE</string>
     <string name="tunbuxunhuan">HIP CYCLE</string>
     <string name="toubuxunhuan">HEAD CYCLE</string>
     <string name="tuibuxunhuan">LEG CYCLE</string>
     <string name="yaobuxunhuan">LOIN CYCLE</string>
+    <string name="beibuxunhuan">BACK CYCLE</string>
 
 
     <!-- 灯光 -->
