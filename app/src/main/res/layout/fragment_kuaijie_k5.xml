@@ -63,6 +63,46 @@
                 android:layout_gravity="center_horizontal"
                 />
 
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/anjian_tuoyuan_height"
+                android:layout_marginLeft="@dimen/anjian_margin_size"
+                android:layout_marginRight="@dimen/anjian_margin_size"
+                android:layout_marginTop="20dp">
+
+
+                <com.sn.blackdianqi.view.AnjianTuoYuanView
+                    android:id="@+id/view_fenti_jiyi_left"
+                    android:layout_width="@dimen/anjian_tuoyuan_width"
+                    android:layout_height="match_parent"
+                    app:title="@string/jiyi"
+                    app:bgnormal="@drawable/bg_tuoyuan_normal"
+                    app:bgselected="@drawable/bg_tuoyuan_selected"
+                    app:icon="@mipmap/xr_lingyali_xiao"
+                    android:layout_weight="1"
+                    />
+
+                <View
+                    android:layout_width="@dimen/anjian_middle_width"
+                    android:layout_height="match_parent"
+                    />
+
+                <com.sn.blackdianqi.view.AnjianTuoYuanView
+                    android:id="@+id/view_fenti_jiyi_right"
+                    android:layout_width="@dimen/anjian_tuoyuan_width"
+                    android:layout_height="match_parent"
+                    app:title="@string/jiyi"
+                    app:bgnormal="@drawable/bg_tuoyuan_normal"
+                    app:bgselected="@drawable/bg_tuoyuan_selected"
+                    app:icon="@mipmap/xr_lingyali_xiao"
+                    android:layout_weight="1"
+                    />
+
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/anjian_tuoyuan_height"
@@ -103,43 +143,6 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/anjian_tuoyuan_height"
-                android:layout_marginLeft="@dimen/anjian_margin_size"
-                android:layout_marginRight="@dimen/anjian_margin_size"
-                android:layout_marginTop="20dp">
-
-
-                <com.sn.blackdianqi.view.AnjianTuoYuanView
-                    android:id="@+id/view_fenti_lingyali_left"
-                    android:layout_width="@dimen/anjian_tuoyuan_width"
-                    android:layout_height="match_parent"
-                    app:title="@string/lingyali"
-                    app:bgnormal="@drawable/bg_tuoyuan_normal"
-                    app:bgselected="@drawable/bg_tuoyuan_selected"
-                    app:icon="@mipmap/xr_lingyali_xiao"
-                    android:layout_weight="1"
-                    />
-
-                <View
-                    android:layout_width="@dimen/anjian_middle_width"
-                    android:layout_height="match_parent"
-                    />
-
-                <com.sn.blackdianqi.view.AnjianTuoYuanView
-                    android:id="@+id/view_fenti_lingyali_right"
-                    android:layout_width="@dimen/anjian_tuoyuan_width"
-                    android:layout_height="match_parent"
-                    app:title="@string/lingyali"
-                    app:bgnormal="@drawable/bg_tuoyuan_normal"
-                    app:bgselected="@drawable/bg_tuoyuan_selected"
-                    app:icon="@mipmap/xr_lingyali_xiao"
-                    android:layout_weight="1"
-                    />
-
-
-            </LinearLayout>
 
 
             <LinearLayout
@@ -204,6 +207,44 @@
                 android:layout_gravity="center_horizontal"
                 />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/anjian_tuoyuan_height"
+                android:layout_marginLeft="@dimen/anjian_margin_size"
+                android:layout_marginRight="@dimen/anjian_margin_size"
+                android:layout_marginTop="20dp">
+
+
+                <com.sn.blackdianqi.view.AnjianTuoYuanView
+                    android:id="@+id/view_tongbu_jiyi_left"
+                    android:layout_width="@dimen/anjian_tuoyuan_width"
+                    android:layout_height="match_parent"
+                    app:title="@string/jiyi"
+                    app:bgnormal="@drawable/bg_tuoyuan_normal"
+                    app:bgselected="@drawable/bg_tuoyuan_selected"
+                    app:icon="@mipmap/xr_lingyali_xiao"
+                    android:layout_weight="1"
+                    />
+
+                <View
+                    android:layout_width="@dimen/anjian_middle_width"
+                    android:layout_height="match_parent"
+                    />
+
+                <com.sn.blackdianqi.view.AnjianTuoYuanView
+                    android:id="@+id/view_tongbu_jiyi_right"
+                    android:layout_width="@dimen/anjian_tuoyuan_width"
+                    android:layout_height="match_parent"
+                    app:title="@string/jiyi"
+                    app:bgnormal="@drawable/bg_tuoyuan_normal"
+                    app:bgselected="@drawable/bg_tuoyuan_selected"
+                    app:icon="@mipmap/xr_lingyali_xiao"
+                    android:layout_weight="1"
+                    />
+
+
+            </LinearLayout>
+
             <com.sn.blackdianqi.view.AnjianChangTuoYuanView
                 android:id="@+id/view_tongbu_kandianshi"
                 android:layout_width="match_parent"
@@ -216,17 +257,6 @@
                 app:bgselected="@drawable/bg_tuoyuan_selected"
                 app:icon="@mipmap/xr_kandianshi_xiao"/>
 
-            <com.sn.blackdianqi.view.AnjianChangTuoYuanView
-                android:id="@+id/view_tongbu_lingyali"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/anjian_tuoyuan_height"
-                android:layout_marginLeft="@dimen/anjian_margin_size"
-                android:layout_marginRight="@dimen/anjian_margin_size"
-                android:layout_marginTop="20dp"
-                app:title="@string/lingyali"
-                app:bgnormal="@drawable/bg_tuoyuan_normal"
-                app:bgselected="@drawable/bg_tuoyuan_selected"
-                app:icon="@mipmap/xr_lingyali_xiao"/>
 
             <com.sn.blackdianqi.view.AnjianChangTuoYuanView
                 android:id="@+id/view_tongbu_fuyuan"

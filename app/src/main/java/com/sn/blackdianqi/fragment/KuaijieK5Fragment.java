@@ -16,7 +16,6 @@ import com.sn.blackdianqi.R;
 import com.sn.blackdianqi.util.LogUtils;
 import com.sn.blackdianqi.view.AnjianChangTuoYuanView;
 import com.sn.blackdianqi.view.AnjianTuoYuanView;
-import com.sn.blackdianqi.view.AnjianYuanView;
 import com.sn.blackdianqi.view.JiyiView;
 
 import androidx.annotation.NonNull;
@@ -28,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * 快捷K2
  */
-public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTouchListener {
+public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTouchListener {
 
 
     @BindView(R.id.img_anjian_top_icon)
@@ -45,14 +44,14 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     AnjianTuoYuanView fentiKandianshiLeftView;
     @BindView(R.id.view_fenti_kandianshi_right)
     AnjianTuoYuanView fentiKandianshiRightView;
-    @BindView(R.id.view_fenti_lingyali_left)
-    AnjianTuoYuanView fentiLingyaliLeftView;
-    @BindView(R.id.view_fenti_lingyali_right)
-    AnjianTuoYuanView fentiLingyaliRightView;
+    @BindView(R.id.view_fenti_jiyi_left)
+    AnjianTuoYuanView fentiJiyiLeftView;
+    @BindView(R.id.view_fenti_jiyi_right)
+    AnjianTuoYuanView fentiJiyiRightView;
     @BindView(R.id.view_fenti_fuyuan_left)
-    AnjianTuoYuanView fentiFuyuanLeftView;
+    AnjianChangTuoYuanView fentiFuyuanLeftView;
     @BindView(R.id.view_fenti_fuyuan_right)
-    AnjianTuoYuanView fentiFuyuanRightView;
+    AnjianChangTuoYuanView fentiFuyuanRightView;
 
 
     // 同步
@@ -60,10 +59,12 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     LinearLayout tongbuLayout;
     @BindView(R.id.view_tongbu)
     JiyiView tongbuView;
+    @BindView(R.id.view_tongbu_jiyi_left)
+    AnjianChangTuoYuanView tongbuJiyiLeftView;
+    @BindView(R.id.view_tongbu_jiyi_right)
+    AnjianChangTuoYuanView tongbuJiyiRightView;
     @BindView(R.id.view_tongbu_kandianshi)
     AnjianChangTuoYuanView tongbuKandianshiView;
-    @BindView(R.id.view_tongbu_lingyali)
-    AnjianChangTuoYuanView tongbuLingyaliView;
     @BindView(R.id.view_tongbu_fuyuan)
     AnjianChangTuoYuanView tongbuFuyuanView;
 
@@ -76,7 +77,7 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        View view = inflater.inflate(R.layout.fragment_kuaijie_k4, container, false);
+        View view = inflater.inflate(R.layout.fragment_kuaijie_k5, container, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,15 +96,16 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         fentiView.setOnTouchListener(this);
         fentiKandianshiLeftView.setOnTouchListener(this);
         fentiKandianshiRightView.setOnTouchListener(this);
-        fentiLingyaliLeftView.setOnTouchListener(this);
-        fentiLingyaliRightView.setOnTouchListener(this);
+        fentiJiyiLeftView.setOnTouchListener(this);
+        fentiJiyiRightView.setOnTouchListener(this);
         fentiFuyuanLeftView.setOnTouchListener(this);
         fentiFuyuanRightView.setOnTouchListener(this);
 
         tongbuLayout.setOnTouchListener(this);
         tongbuView.setOnTouchListener(this);
         tongbuKandianshiView.setOnTouchListener(this);
-        tongbuLingyaliView.setOnTouchListener(this);
+        tongbuJiyiLeftView.setOnTouchListener(this);
+        tongbuJiyiRightView.setOnTouchListener(this);
         tongbuFuyuanView.setOnTouchListener(this);
     }
 
@@ -141,11 +143,13 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         }
         if (data.contains("FF FF FF FF 03 12 00 33")) {
             // 分体零压力left
-            fentiLingyaliLeftView.setSelected(true);
+            fentiJiyiLeftView.setSelected(true);
+            tongbuJiyiLeftView.setSelected(true);
         }
         if (data.contains("FF FF FF FF 03 12 00 34")) {
             // 分体零压力right
-            fentiLingyaliRightView.setSelected(true);
+            fentiJiyiRightView.setSelected(true);
+            tongbuJiyiRightView.setSelected(true);
         }
 
 
@@ -165,20 +169,24 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
             fentiKandianshiRightView.setSelected(false);
         }
 
-        // 分体零压力left 按键回码
+        // 记忆left 按键回码
         if (data.contains("FF FF FF FF 05 00 00 30 33 83 15")) {
-            fentiLingyaliLeftView.setSelected(true);
+            fentiJiyiLeftView.setSelected(true);
+            tongbuJiyiLeftView.setSelected(true);
         }
         if (data.contains("FF FF FF FF 05 00 00 3F 33 86 E5")) {
-            fentiLingyaliLeftView.setSelected(false);
+            fentiJiyiLeftView.setSelected(false);
+            tongbuJiyiLeftView.setSelected(false);
         }
 
-        // 分体零压力right 按键回码
+        // 记忆right 按键回码
         if (data.contains("FF FF FF FF 05 00 00 40 34 E7 17")) {
-            fentiLingyaliRightView.setSelected(true);
+            fentiJiyiRightView.setSelected(true);
+            tongbuJiyiRightView.setSelected(true);
         }
         if (data.contains("FF FF FF FF 05 00 00 4F 34 E2 E7")) {
-            fentiLingyaliRightView.setSelected(false);
+            fentiJiyiRightView.setSelected(false);
+            tongbuJiyiRightView.setSelected(false);
         }
     }
     @Override
@@ -190,10 +198,10 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
             // 看电视右
             sendAskBlueCmd("FF FF FF FF 03 00 6D 00 09 0E DB");
             Thread.sleep(300L);
-            // 零压力左
+            // 记忆左
             sendAskBlueCmd("FF FF FF FF 03 00 76 00 09 7E DC");
             Thread.sleep(300L);
-            // 零压力右
+            // 记忆右
             sendAskBlueCmd("FF FF FF FF 03 00 7F 00 09 AE DE");
         } catch (Exception e) {
             LogUtils.e(TAG, "askStatus 异常" + e.getMessage());
@@ -259,9 +267,9 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
                 setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.lingyali);
                 if (MotionEvent.ACTION_DOWN == action) {
                     eventDownTime = System.currentTimeMillis();
-                    timeHandler.sendEmptyMessageDelayed(FENTI_LINGYALI_LEFT_WHAT, DEFAULT_INTERVAL);
+                    timeHandler.sendEmptyMessageDelayed(FENTI_JIYI_LEFT_WHAT, DEFAULT_INTERVAL);
                 } else if (MotionEvent.ACTION_UP == action) {
-                    timeHandler.removeMessages(FENTI_LINGYALI_LEFT_WHAT);
+                    timeHandler.removeMessages(FENTI_JIYI_LEFT_WHAT);
                     if (isShortClick()) {
                         // 短按
                         if (fentiKandianshiLeftView.isSelected()) {
@@ -276,9 +284,9 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
                 setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.lingyali);
                 if (MotionEvent.ACTION_DOWN == action) {
                     eventDownTime = System.currentTimeMillis();
-                    timeHandler.sendEmptyMessageDelayed(FENTI_LINGYALI_RIGHT_WHAT, DEFAULT_INTERVAL);
+                    timeHandler.sendEmptyMessageDelayed(FENTI_JIYI_RIGHT_WHAT, DEFAULT_INTERVAL);
                 } else if (MotionEvent.ACTION_UP == action) {
-                    timeHandler.removeMessages(FENTI_LINGYALI_RIGHT_WHAT);
+                    timeHandler.removeMessages(FENTI_JIYI_RIGHT_WHAT);
                     if (isShortClick()) {
                         if (fentiKandianshiRightView.isSelected()) {
                             sendBlueCmd("FF FF FF FF 05 00 00 41 34 E6 87");
@@ -327,8 +335,10 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     private static final int TONGBU_WHAT = 2;
     private static final int FENTI_KANDIANSHI_LEFT_WHAT = 3;
     private static final int FENTI_KANDIANSHI_RIGHT_WHAT = 4;
-    private static final int FENTI_LINGYALI_LEFT_WHAT = 5;
-    private static final int FENTI_LINGYALI_RIGHT_WHAT = 6;
+    private static final int FENTI_JIYI_LEFT_WHAT = 5;
+    private static final int FENTI_JIYI_RIGHT_WHAT = 6;
+    private static final int TONGBU_JIYI_LEFT_WHAT = 7;
+    private static final int TONGBU_JIYI_RIGHT_WHAT = 8;
 
     /**
      * 记忆1 1
@@ -354,11 +364,17 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
                 case FENTI_KANDIANSHI_RIGHT_WHAT:
                     kandianshiRightLongClick();
                     break;
-                case FENTI_LINGYALI_LEFT_WHAT:
-                    lingyaliLeftLongClick();
+                case FENTI_JIYI_LEFT_WHAT:
+                    fentiJiyiLeftLongClick();
                     break;
-                case FENTI_LINGYALI_RIGHT_WHAT:
-                    lingyaliRightLongClick();
+                case FENTI_JIYI_RIGHT_WHAT:
+                    fentiJiyiRightLongClick();
+                    break;
+                case TONGBU_JIYI_LEFT_WHAT:
+                    tongbuJiyiLeftLongClick();
+                    break;
+                case TONGBU_JIYI_RIGHT_WHAT:
+                    tongbuJiyiRightLongClick();
                     break;
                 default:
                     break;
@@ -399,8 +415,8 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
     }
 
 
-    private void lingyaliLeftLongClick() {
-        if (fentiLingyaliLeftView.isSelected()) {
+    private void fentiJiyiLeftLongClick() {
+        if (fentiJiyiLeftView.isSelected()) {
             // 有记忆
             sendBlueCmd("FF FF FF FF 05 00 00 3F 33 86 E5");
         } else {
@@ -408,8 +424,26 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         }
     }
 
-    private void lingyaliRightLongClick() {
-        if (fentiLingyaliRightView.isSelected()) {
+    private void tongbuJiyiLeftLongClick() {
+        if (tongbuJiyiLeftView.isSelected()) {
+            // 有记忆
+            sendBlueCmd("FF FF FF FF 05 00 00 3F 33 86 E5");
+        } else {
+            sendBlueCmd("FF FF FF FF 05 00 00 30 33 83 15");
+        }
+    }
+
+    private void fentiJiyiRightLongClick() {
+        if (fentiJiyiRightView.isSelected()) {
+            // 有记忆
+            sendBlueCmd("FF FF FF FF 05 00 00 4F 34 E2 E7");
+        } else {
+            sendBlueCmd("FF FF FF FF 05 00 00 40 34 E7 17");
+        }
+    }
+
+    private void tongbuJiyiRightLongClick() {
+        if (tongbuJiyiRightView.isSelected()) {
             // 有记忆
             sendBlueCmd("FF FF FF FF 05 00 00 4F 34 E2 E7");
         } else {
