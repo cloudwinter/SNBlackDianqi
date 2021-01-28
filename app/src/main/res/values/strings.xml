@@ -63,6 +63,7 @@
     <string name="tuibutiaozheng">LEG</string>
     <string name="yaobutiaozheng">LOIN</string>
     <string name="beituitiaozheng">BACK LEG</string>
+    <string name="zhengtishengjiang">LIFT</string>
 
     <string name="quanshenxunhuan">BODY CYCLE</string>
     <string name="tunbuxunhuan">HIP CYCLE</string>
