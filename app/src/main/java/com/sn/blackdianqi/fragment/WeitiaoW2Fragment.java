@@ -41,8 +41,8 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
     LinearLayout tiaozhengLayout;
     @BindView(R.id.view_beibutiaozheng)
     AnjianWeitiaoView beibutiaozhengView;
-    @BindView(R.id.view_tunbutiaozheng)
-    AnjianWeitiaoView tunbutiaozhengView;
+    @BindView(R.id.view_yaobutiaozheng)
+    AnjianWeitiaoView yaobutiaozhengView;
     @BindView(R.id.view_tuobutiaozheng)
     AnjianWeitiaoView tuobutiaozhengView;
     @BindView(R.id.view_tuibutiaozheng)
@@ -53,7 +53,7 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
     LinearLayout xunhuanLayout;
     @BindView(R.id.view_quanshengxunhuan)
     AnjianChangTuoYuanView quanshengxunhuanView;
-    @BindView(R.id.view_tunbuxunhuan)
+    @BindView(R.id.view_yaobuxunhuan)
     AnjianChangTuoYuanView tunbuxunhuanView;
     @BindView(R.id.view_toubuxunhuan)
     AnjianChangTuoYuanView toubuxunhuanView;
@@ -108,7 +108,7 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
             }
         });
 
-        tunbutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
+        yaobutiaozhengView.setChildTouchListener(new AnjianWeitiaoView.ChildTouchListener() {
             @Override
             public void onTopTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
@@ -255,8 +255,8 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
                     sendBlueCmd("FF FF FF FF 05 00 05 00 E4 C7 4A");
                 }
                 break;
-            case R.id.view_tunbuxunhuan:
-                setTopIconAndTitle(R.mipmap.xr_tunbuxunhuan_da, R.string.tunbuxunhuan);
+            case R.id.view_yaobuxunhuan:
+                setTopIconAndTitle(R.mipmap.xr_tunbuxunhuan_da, R.string.yaobuxunhuan);
                 if (MotionEvent.ACTION_DOWN == action) {
                     sendBlueCmd("FF FF FF FF 05 00 05 00 E6 46 8B");
                 }
@@ -270,7 +270,7 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
             case R.id.view_tuibuxunhuan:
                 setTopIconAndTitle(R.mipmap.xr_tuibuxunhuan_da, R.string.tuibuxunhuan);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 05 00 E6 46 8B");
+                    sendBlueCmd("FF FF FF FF 05 00 05 00 E5 06 8A");
                 }
                 break;
         }

@@ -271,7 +271,7 @@ public class WeitiaoW1Fragment extends WeitiaoBaseFragment implements View.OnTou
             case R.id.view_tuibuxunhuan:
                 setTopIconAndTitle(R.mipmap.xr_tuibuxunhuan_da, R.string.tuibuxunhuan);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 05 00 E6 46 8B");
+                    sendBlueCmd("FF FF FF FF 05 00 05 00 E5 06 8A");
                 }
                 break;
         }
