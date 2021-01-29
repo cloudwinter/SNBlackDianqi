@@ -79,6 +79,16 @@
     <string name="eightxiaoshi">8Hours</string>
     <string name="tentxiaoshi">10Hours</string>
 
+
+    <!-- 按摩 -->
+    <string name="anmopinglv">Massage Hz</string>
+    <string name="toubuanmo">Head Massage</string>
+    <string name="zubuanmo">Foot Massage</string>
+    <string name="tenmin">10 min</string>
+    <string name="twentymin">20 min</string>
+    <string name="thirtymin">30 min</string>
+
+
     <string name="device_no_connected">Device Not Connected</string>
 
 

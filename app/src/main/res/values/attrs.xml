@@ -27,6 +27,23 @@
         <attr name="bgselected" />
     </declare-styleable>
 
+    <declare-styleable name="AnjianAnmoYuanView">
+        <attr name="title" />
+        <attr name="icon" />
+        <attr name="bgnormal" />
+        <attr name="bgselected" />
+        <attr name="imgnormal" format="reference"/>
+        <attr name="imgselected" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="AnjianAnmoView">
+        <attr name="title" />
+        <attr name="icon" />
+        <attr name="bgnormal" />
+        <attr name="bgselected" />
+        <attr name="linecount" format="integer"/>
+    </declare-styleable>
+
     <declare-styleable name="FixedRatioRelativeLayout">
         <attr name="ratio" format="float"></attr>
     </declare-styleable>
