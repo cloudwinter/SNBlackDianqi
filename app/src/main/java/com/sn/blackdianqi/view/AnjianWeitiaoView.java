@@ -78,23 +78,30 @@ public class AnjianWeitiaoView extends LinearLayout implements View.OnTouchListe
         int action = event.getAction();
         switch (v.getId()) {
             case R.id.layout_sanjiao_top:
-                if (MotionEvent.ACTION_DOWN == action) {
-                    sanjiaoTopImageView.setSelected(true);
-                } else if (MotionEvent.ACTION_UP == action) {
-                    sanjiaoTopImageView.setSelected(false);
-                }
                 if (childTouchListener != null) {
                     childTouchListener.onTopTouch(event);
                 }
+                if (MotionEvent.ACTION_DOWN == action) {
+                    LogUtils.d(TAG, "ACTION_DOWN");
+                    sanjiaoTopImageView.setSelected(true);
+                } else if (MotionEvent.ACTION_UP == action) {
+                    LogUtils.d(TAG, "ACTION_UP");
+                    sanjiaoTopImageView.setSelected(false);
+                } else if (MotionEvent.ACTION_CANCEL == action) {
+                    LogUtils.d(TAG, "ACTION_CANCEL");
+                    sanjiaoTopImageView.setSelected(false);
+                }
                 break;
             case R.id.layout_sanjiao_bottom:
+                if (childTouchListener != null) {
+                    childTouchListener.onBottomTouch(event);
+                }
                 if (MotionEvent.ACTION_DOWN == action) {
                     sanjiaoBottomImageView.setSelected(true);
                 } else if (MotionEvent.ACTION_UP == action) {
                     sanjiaoBottomImageView.setSelected(false);
-                }
-                if (childTouchListener != null) {
-                    childTouchListener.onBottomTouch(event);
+                } else if (MotionEvent.ACTION_CANCEL == action) {
+                    sanjiaoBottomImageView.setSelected(false);
                 }
                 break;
 

@@ -171,7 +171,7 @@ public class WeitiaoW8Fragment extends WeitiaoBaseFragment implements View.OnTou
                     setTitle(R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 35 17 17");
                     startAnimation(R.drawable.weitiao_beibu_top_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_beibutiaozheng_1, R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -184,7 +184,7 @@ public class WeitiaoW8Fragment extends WeitiaoBaseFragment implements View.OnTou
                     setTitle(R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 36 57 16");
                     startAnimation(R.drawable.weitiao_beibu_bottom_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_beibutiaozheng_1, R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -199,7 +199,7 @@ public class WeitiaoW8Fragment extends WeitiaoBaseFragment implements View.OnTou
                     setTitle(R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 37 96 D6");
                     startAnimation(R.drawable.weitiao_tuibu_top_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_tuibutiaozheng_1, R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -212,7 +212,7 @@ public class WeitiaoW8Fragment extends WeitiaoBaseFragment implements View.OnTou
                     setTitle(R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 38 D6 D2");
                     startAnimation(R.drawable.weitiao_tuibu_top_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.xr_tuibuxunhuan_da, R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();

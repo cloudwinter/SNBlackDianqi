@@ -66,7 +66,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
                     setTitle(R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 03 97 01");
                     startAnimation(R.drawable.weitiao_beibu_top_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_beibutiaozheng_1, R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -79,7 +79,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
                     setTitle(R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 04 D6 C3");
                     startAnimation(R.drawable.weitiao_beibu_bottom_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_beibutiaozheng_1, R.string.beibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -95,7 +95,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
                     setTitle(R.string.zhengtishengjiang);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 06 57 02");
                     startAnimation(R.drawable.weitiao_zhengtishengjiang_top_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_zhengtishengjiang_1, R.string.zhengtishengjiang);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
@@ -108,7 +108,7 @@ public class WeitiaoW6Fragment extends WeitiaoBaseFragment {
                     setTitle(R.string.zhengtishengjiang);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 07 96 C2");
                     startAnimation(R.drawable.weitiao_zhengtishengjiang_bottom_animation);
-                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_zhengtishengjiang_1, R.string.zhengtishengjiang);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();

@@ -338,15 +338,16 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
                 @Override
                 public void run() {
                     if (device != null) {
+                        LogUtils.i(TAG, "搜索到蓝牙设备信息：" + device.getName()+" "+device.getAddress());
                         // 发送给客户时需要加上
                         String deviceName = device.getName();
                         if (TextUtils.isEmpty(deviceName)) {
                             return;
                         }
-                        if (!deviceName.contains("QMS2") && !deviceName.contains("QMS-MQ")) {
-                            return;
-                        }
-                        LogUtils.i(TAG, "搜索到蓝牙设备信息：" + device.getName());
+//                        if (!deviceName.contains("QMS")) {
+//                            return;
+//                        }
+                        //LogUtils.i(TAG, "搜索到蓝牙设备信息：" + device.getName()+" "+device.getAddress());
                         String latelyConnectedDevice = Prefer.getInstance().getLatelyConnectedDevice();
                         if (device.getAddress().equals(latelyConnectedDevice)) {
                             if (("main").equals(mFrom) && isFirstScan) {
@@ -516,6 +517,37 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
                 }
             }
         }
+    }
+
+
+
+    private List<String> blueName() {
+        List<String> blueNameList = new ArrayList<>();
+        blueNameList.add("QMS-IQ");
+        blueNameList.add("QMS-I06");
+        blueNameList.add("QMS-L04");
+        blueNameList.add("QMS-LQ");
+
+        blueNameList.add("QMS-JQ-D");
+        blueNameList.add("QMS4");
+
+        blueNameList.add("QMS-NQ");
+        blueNameList.add("QMS3");
+
+        blueNameList.add("QMS-MQ");
+        blueNameList.add("QMS2");
+
+        blueNameList.add("QMS-KQ-H");
+        blueNameList.add("QMS-H02");
+
+        blueNameList.add("QMS-DFQ");
+        blueNameList.add("QMS-430");
+        blueNameList.add("QMS-444");
+
+        blueNameList.add("QMS-DQ");
+        blueNameList.add("QMS-443");
+
+        return blueNameList;
     }
 
 

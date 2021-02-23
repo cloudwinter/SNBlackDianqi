@@ -2,6 +2,7 @@ package com.sn.blackdianqi.fragment;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.util.Log;
+import android.view.MotionEvent;
 
 import com.sn.blackdianqi.MyApplication;
 import com.sn.blackdianqi.R;
@@ -46,6 +47,13 @@ public class WeitiaoBaseFragment extends BaseFragment {
         }
         characteristic.setValue(BlueUtils.StringToBytes(cmd));
         MyApplication.getInstance().mBluetoothLeService.writeCharacteristic(characteristic);
+    }
+
+    protected boolean isUPorCancel(int eventAction) {
+        if (MotionEvent.ACTION_UP == eventAction || MotionEvent.ACTION_CANCEL == eventAction) {
+            return true;
+        }
+        return false;
     }
 
 }

@@ -70,16 +70,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
 
-//            applicationVariants.all { variant ->
-//                variant.outputs.all { output ->
-//                    def outputFile = output.outputFile
-//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-//                        // 输出apk名称为test_v1.0_2016-08-15_wandoujia.apk
-//                        def fileName = "SNBlack${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
-//                        output.outputFileName = new File("../../../realease/", fileName);
-//                    }
-//                }
-//            }
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为test_v1.0_2016-08-15_wandoujia.apk
+                        def fileName = "zero-sleep${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFileName = new File("../../../realease/", fileName);
+                    }
+                }
+            }
         }
     }
 
