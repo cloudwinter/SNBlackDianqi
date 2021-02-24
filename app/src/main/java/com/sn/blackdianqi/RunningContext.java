@@ -1,5 +1,7 @@
 package com.sn.blackdianqi;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Application;
 import android.app.job.JobScheduler;
 import android.content.Context;
@@ -9,8 +11,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 
+import com.sn.blackdianqi.util.LogUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 
 public class RunningContext {
@@ -130,5 +139,54 @@ public class RunningContext {
             e.printStackTrace();
             return 1;
         }
+    }
+
+
+    /**
+     * 检查相机权限
+     *
+     * @param activity
+     * @return
+     */
+    public static boolean checkLocationPermission(Activity activity, boolean request) {
+        if (activity != null) {
+            LogUtils.i("checkLocationPermission 检查定位权限", activity.getClass().getName());
+        } else {
+            LogUtils.i("checkLocationPermission 检查定位权限 定时任务");
+        }
+
+        boolean granted = true;
+        String[] permissions = new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
+        List<String> newApplyPermissions = new ArrayList<>();
+        for (String permission : permissions) {
+            if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(sAppContext, permission)) {
+                granted = false;
+                newApplyPermissions.add(permission);
+            }
+        }
+        if (!granted) {
+            if (request) {
+                ActivityCompat.requestPermissions(activity, listConvertToArray(newApplyPermissions), PERMISSIONS_REQUEST_CODE);
+            }
+        }
+        if (activity != null) {
+            LogUtils.i("checkLocationPermission 检查定位权限 结果：" + granted, activity.getClass().getName());
+        } else {
+            LogUtils.i("checkLocationPermission 检查定位权限 定时任务结果：" + granted);
+        }
+
+        return granted;
+    }
+
+
+    public static String[] listConvertToArray(List<String> strList) {
+        if (strList == null && strList.size() == 0) {
+            return null;
+        }
+        String[] strArray = new String[strList.size()];
+        for (int i = 0; i < strList.size(); i++) {
+            strArray[i] = strList.get(i);
+        }
+        return strArray;
     }
 }
