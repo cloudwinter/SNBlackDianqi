@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zero Sleep</string>
+    <string name="app_name">Motion Bed</string>
 
     <!-- common -->
     <string name="exit">Press the back key again to exit the app</string>

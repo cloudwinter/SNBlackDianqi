@@ -230,20 +230,20 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
         }
 
         if (data.contains("FF FF FF FF 05 00 00 03 24 D7 EB")) {
-            // 按摩频率停止
+            // 按摩频率1档
             anmoPinglvView.setLevel(1);
         }
         if (data.contains("FF FF FF FF 05 00 00 03 25 16 2B")) {
-            // 按摩频率一档
-            anmoZubuView.setLevel(2);
+            // 按摩频率2档
+            anmoPinglvView.setLevel(2);
         }
         if (data.contains("FF FF FF FF 05 00 00 03 26 56 2A")) {
-            // 按摩频率二档
-            anmoZubuView.setLevel(3);
+            // 按摩频率3档
+            anmoPinglvView.setLevel(3);
         }
         if (data.contains("FF FF FF FF 05 00 00 03 27 97 EA")) {
-            // 按摩频率三档
-            anmoZubuView.setLevel(4);
+            // 按摩频率4档
+            anmoPinglvView.setLevel(4);
         }
     }
 
