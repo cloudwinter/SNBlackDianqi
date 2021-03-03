@@ -186,13 +186,13 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         try {
             // 看电视左
             sendAskBlueCmd("FF FF FF FF 03 00 64 00 09 DE D9");
-            Thread.sleep(300L);
+            Thread.sleep(500L);
             // 看电视右
             sendAskBlueCmd("FF FF FF FF 03 00 6D 00 09 0E DB");
-            Thread.sleep(300L);
+            Thread.sleep(500L);
             // 零压力左
             sendAskBlueCmd("FF FF FF FF 03 00 76 00 09 7E DC");
-            Thread.sleep(300L);
+            Thread.sleep(500L);
             // 零压力右
             sendAskBlueCmd("FF FF FF FF 03 00 7F 00 09 AE DE");
         } catch (Exception e) {

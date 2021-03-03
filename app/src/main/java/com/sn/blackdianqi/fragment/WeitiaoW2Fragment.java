@@ -191,8 +191,8 @@ public class WeitiaoW2Fragment extends WeitiaoBaseFragment implements View.OnTou
             public void onBottomTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
                     setTitle(R.string.tuibutiaozheng);
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 06 57 02");
-                    startAnimation(R.drawable.weitiao_tuibu_top_animation);
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 07 96 C2");
+                    startAnimation(R.drawable.weitiao_tuibu_bottom_animation);
                 } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_tuibutiaozheng_1, R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");

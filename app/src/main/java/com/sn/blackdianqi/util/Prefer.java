@@ -46,7 +46,7 @@ public class Prefer {
 
 
     /**
-     * zh/en
+     * zh/en/fr
      * @param language
      */
     public void setSelectedLanguage(String language) {

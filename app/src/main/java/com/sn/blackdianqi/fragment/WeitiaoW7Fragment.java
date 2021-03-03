@@ -240,9 +240,9 @@ public class WeitiaoW7Fragment extends WeitiaoBaseFragment implements View.OnTou
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
                     setTitle(R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 38 D6 D2");
-                    startAnimation(R.drawable.weitiao_tuibu_top_animation);
+                    startAnimation(R.drawable.weitiao_tuibu_bottom_animation);
                 } else if (isUPorCancel(event.getAction())) {
-                    setTopIconAndTitle(R.mipmap.xr_tuibuxunhuan_da, R.string.tuibutiaozheng);
+                    setTopIconAndTitle(R.mipmap.animation_tuibutiaozheng_1, R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
                     stopAnimation();
                 }

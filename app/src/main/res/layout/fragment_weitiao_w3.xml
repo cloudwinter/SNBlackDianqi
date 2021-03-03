@@ -119,13 +119,13 @@
 
 
         <com.sn.blackdianqi.view.AnjianChangTuoYuanView
-            android:id="@+id/view_beibuxunhuan"
+            android:id="@+id/view_beituixunhuan"
             android:layout_width="match_parent"
             android:layout_height="@dimen/anjian_weitiao_height"
             android:layout_marginLeft="@dimen/weitiao_marin"
             android:layout_marginRight="@dimen/weitiao_marin"
             android:layout_marginTop="@dimen/weitiao_marin"
-            app:title="@string/toubuxunhuan"
+            app:title="@string/beituixunhuan"
             app:bgnormal="@drawable/bg_tuoyuan_normal"
             app:bgselected="@drawable/bg_tuoyuan_selected"
             app:icon="@mipmap/xr_zhihan_xiao"/>

@@ -160,6 +160,7 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.view_10time:
                 if (min10View.isSelected()) {
+                    clear();
                     sendBlueCmd("FF FF FF FF 05 00 00 00 1C D6 C9");
                 } else {
                     sendBlueCmd("FF FF FF FF 05 00 00 00 16 56 CE");
@@ -170,6 +171,7 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.view_20time:
                 if (min20View.isSelected()) {
+                    clear();
                     sendBlueCmd("FF FF FF FF 05 00 00 00 1C D6 C9");
                 } else {
                     sendBlueCmd("FF FF FF FF 05 00 00 00 17 97 0E");
@@ -180,6 +182,7 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.view_30time:
                 if (min30View.isSelected()) {
+                    clear();
                     sendBlueCmd("FF FF FF FF 05 00 00 00 1C D6 C9");
                 } else {
                     sendBlueCmd("FF FF FF FF 05 00 00 00 18 D7 0A");
@@ -190,6 +193,16 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
                 break;
 
         }
+    }
+
+
+    private void clear() {
+        // 头部按摩停止
+        anmoToubuView.setLevel(0);
+        // 足部按摩停止
+        anmoZubuView.setLevel(0);
+        // 按摩频率1档
+        anmoPinglvView.setLevel(0);
     }
 
 

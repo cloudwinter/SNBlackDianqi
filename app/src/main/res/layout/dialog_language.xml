@@ -15,21 +15,21 @@ android:orientation="vertical" >
         android:background="@drawable/bg_dialog_button_top">
 
         <RelativeLayout
-            android:id="@+id/rl_chinese"
+            android:id="@+id/rl_english"
             android:layout_width="match_parent"
             android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/chinese"
+                android:text="@string/english"
                 android:textSize="20dp"
                 android:textColor="#0C0B0E"
                 android:layout_centerInParent="true"
                 />
 
             <ImageView
-                android:id="@+id/img_selected_zh"
+                android:id="@+id/img_selected_en"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_selected"
@@ -49,21 +49,21 @@ android:orientation="vertical" >
 
 
         <RelativeLayout
-            android:id="@+id/rl_english"
+            android:id="@+id/rl_french"
             android:layout_width="match_parent"
             android:layout_height="60dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/english"
+                android:text="@string/french"
                 android:textSize="20dp"
                 android:textColor="#0C0B0E"
                 android:layout_centerInParent="true"
                 />
 
             <ImageView
-                android:id="@+id/img_selected_en"
+                android:id="@+id/img_selected_fr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_selected"

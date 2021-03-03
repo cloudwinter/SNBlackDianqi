@@ -31,8 +31,8 @@ public class LanguageDialog extends Dialog implements View.OnClickListener {
 
     private Context mContext;
 
-    private RelativeLayout rlChinese;
-    private ImageView imgSelectedChinese;
+    private RelativeLayout rlFrench;
+    private ImageView imgSelectedFrench;
     private RelativeLayout rlEnglish;
     private ImageView imgSelectedEnglish;
     private TextView cancel;
@@ -51,11 +51,11 @@ public class LanguageDialog extends Dialog implements View.OnClickListener {
 
     private void initView(Context context) {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_language, null);
-        rlChinese = view.findViewById(R.id.rl_chinese);
-        rlChinese.setOnClickListener(this);
+        rlFrench = view.findViewById(R.id.rl_french);
+        rlFrench.setOnClickListener(this);
         rlEnglish = view.findViewById(R.id.rl_english);
         rlEnglish.setOnClickListener(this);
-        imgSelectedChinese = view.findViewById(R.id.img_selected_zh);
+        imgSelectedFrench = view.findViewById(R.id.img_selected_fr);
         imgSelectedEnglish = view.findViewById(R.id.img_selected_en);
         cancel = view.findViewById(R.id.cancel);
         cancel.setOnClickListener(this);
@@ -72,11 +72,11 @@ public class LanguageDialog extends Dialog implements View.OnClickListener {
     public void show() {
         super.show();
         // 判断当前选中的语言
-        if (Prefer.getInstance().getSelectedLanguage().equals("zh")) {
-            imgSelectedChinese.setVisibility(View.VISIBLE);
+        if (Prefer.getInstance().getSelectedLanguage().equals("fr")) {
+            imgSelectedFrench.setVisibility(View.VISIBLE);
             imgSelectedEnglish.setVisibility(View.GONE);
         } else {
-            imgSelectedChinese.setVisibility(View.GONE);
+            imgSelectedFrench.setVisibility(View.GONE);
             imgSelectedEnglish.setVisibility(View.VISIBLE);
         }
     }
@@ -87,25 +87,20 @@ public class LanguageDialog extends Dialog implements View.OnClickListener {
             case R.id.cancel:
                 dismiss();
                 break;
-            case R.id.rl_chinese:
-                imgSelectedChinese.setVisibility(View.VISIBLE);
+            case R.id.rl_french:
+                imgSelectedFrench.setVisibility(View.VISIBLE);
                 imgSelectedEnglish.setVisibility(View.GONE);
-                Prefer.getInstance().setSelectedLanguage("zh");
-                if (LocaleUtils.needUpdateLocale(mContext, LocaleUtils.LOCALE_CHINESE)) {
-                    LocaleUtils.updateLocale(mContext, LocaleUtils.LOCALE_CHINESE);
+                Prefer.getInstance().setSelectedLanguage("fr");
+                if (LocaleUtils.needUpdateLocale(mContext, LocaleUtils.LOCALE_FRENCH)) {
+                    LocaleUtils.updateLocale(mContext, LocaleUtils.LOCALE_FRENCH);
                     restartAct();
                 }
                 dismiss();
                 break;
             case R.id.rl_english:
-                imgSelectedChinese.setVisibility(View.GONE);
+                imgSelectedFrench.setVisibility(View.GONE);
                 imgSelectedEnglish.setVisibility(View.VISIBLE);
                 Prefer.getInstance().setSelectedLanguage("en");
-//                if (LocaleUtils.needUpdateLocale(mContext, LocaleUtils.LOCALE_ENGLISH)) {
-//                    LocaleUtils.updateLocale(mContext, LocaleUtils.LOCALE_ENGLISH);
-//
-//                }
-
                 Resources resources = mContext.getResources();
                 DisplayMetrics dm = resources.getDisplayMetrics();
                 Configuration config = resources.getConfiguration();

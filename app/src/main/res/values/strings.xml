@@ -7,8 +7,8 @@
 
 
     <string name="text_enter">Enter</string>
-    <string name="blue_equipment">Equipment</string>
-    <string name="search_blue_equipment">Scanning Nearby Equipment</string>
+    <string name="blue_equipment">Bluetooth device</string>
+    <string name="search_blue_equipment">Scan Nearby Bluetooth devices</string>
     <string name="searching">searching...</string>
 
     <string name="connecting">connecting...</string>
@@ -21,14 +21,14 @@
     <string name="dialog_positive">sure</string>
 
     <!-- 蓝牙设备/设置界面 -->
-    <string name="connecting_device">Connecting Device</string>
+    <string name="connecting_device">Connect Device</string>
     <string name="not_connected">Not Connected</string>
     <string name="connected">Connected</string>
     <string name="disconnect">Disconnect</string>
     <string name="click_to_connect">Click to connect</string>
     <string name="lighting_time">Lighting time</string>
     <string name="switch_language">Switch Language</string>
-    <string name="chinese">Chinese</string>
+    <string name="french">French</string>
     <string name="english">English</string>
     <string name="version">Version</string>
     <string name="privacy_policy">Privacy policy</string>
@@ -43,15 +43,15 @@
 
     <!-- 快捷 -->
     <string name="jiyi">Memory</string>
-    <string name="jiyi1">Memory1</string>
-    <string name="jiyi2">Memory2</string>
+    <string name="jiyi1">Memory 1</string>
+    <string name="jiyi2">Memory 2</string>
     <string name="kandianshi">Watch TV</string>
     <string name="lingyali">Zero Gravity</string>
     <string name="zhihan">Anti Snore</string>
     <string name="fuyuan">Flat Bed</string>
     <string name="tingyinyue">Music</string>
     <string name="tuibufangsong">Leg Relax</string>
-    <string name="dingyao">Top rot</string>
+    <string name="dingyao">Lumbar</string>
     <string name="fenti">Split</string>
     <string name="tongbu">Sync</string>
 
@@ -61,16 +61,17 @@
     <string name="tunbutiaozheng">HIP</string>
     <string name="toubutiaozheng">HEAD</string>
     <string name="tuibutiaozheng">LEG</string>
-    <string name="yaobutiaozheng">LOIN</string>
+    <string name="yaobutiaozheng">LUMBAR</string>
     <string name="beituitiaozheng">BACK LEG</string>
     <string name="zhengtishengjiang">LIFT</string>
 
-    <string name="quanshenxunhuan">BODY CYCLE</string>
+    <string name="quanshenxunhuan">FULL CYCLE</string>
     <string name="tunbuxunhuan">HIP CYCLE</string>
     <string name="toubuxunhuan">HEAD CYCLE</string>
     <string name="tuibuxunhuan">LEG CYCLE</string>
-    <string name="yaobuxunhuan">LOIN CYCLE</string>
+    <string name="yaobuxunhuan">LUMBAR CYCLE</string>
     <string name="beibuxunhuan">BACK CYCLE</string>
+    <string name="beituixunhuan">BACK/LEG CYCLE</string>
 
 
     <!-- 灯光 -->
@@ -81,12 +82,13 @@
 
 
     <!-- 按摩 -->
-    <string name="anmopinglv">Massage Hz</string>
-    <string name="toubuanmo">Head Massage</string>
-    <string name="zubuanmo">Foot Massage</string>
-    <string name="tenmin">10 min</string>
-    <string name="twentymin">20 min</string>
-    <string name="thirtymin">30 min</string>
+    <string name="anmopingdonghuaqu">MASSAGE</string>
+    <string name="anmopinglv">Mass Wave</string>
+    <string name="toubuanmo">Head Mass</string>
+    <string name="zubuanmo">Foot Mass</string>
+    <string name="tenmin">10min</string>
+    <string name="twentymin">20min</string>
+    <string name="thirtymin">30min</string>
 
 
     <string name="device_no_connected">Device Not Connected</string>

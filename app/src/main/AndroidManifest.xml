@@ -53,7 +53,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.HomeActivity" android:launchMode="singleTask"/>
+        <activity android:name=".activity.HomeActivity"/>
         <activity android:name=".activity.ConnectActivity" android:launchMode="singleTask"/>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.WebActivity"></activity>

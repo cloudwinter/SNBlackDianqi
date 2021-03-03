@@ -56,8 +56,8 @@ public class WeitiaoW3Fragment extends WeitiaoBaseFragment implements View.OnTou
     LinearLayout xunhuanLayout;
     @BindView(R.id.view_quanshengxunhuan)
     AnjianChangTuoYuanView quanshengxunhuanView;
-    @BindView(R.id.view_beibuxunhuan)
-    AnjianChangTuoYuanView beibuxunhuanView;
+    @BindView(R.id.view_beituixunhuan)
+    AnjianChangTuoYuanView beituixunhuanView;
     @BindView(R.id.view_yaobuxunhuan)
     AnjianChangTuoYuanView yaobuxunhuanView;
     @BindView(R.id.view_tuibuxunhuan)
@@ -85,7 +85,7 @@ public class WeitiaoW3Fragment extends WeitiaoBaseFragment implements View.OnTou
     private void initView() {
         headLayout.setOnTouchListener(this);
         quanshengxunhuanView.setOnTouchListener(this);
-        beibuxunhuanView.setOnTouchListener(this);
+        beituixunhuanView.setOnTouchListener(this);
         yaobuxunhuanView.setOnTouchListener(this);
         tuibuxunhuanView.setOnTouchListener(this);
 
@@ -191,8 +191,8 @@ public class WeitiaoW3Fragment extends WeitiaoBaseFragment implements View.OnTou
             public void onBottomTouch(MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
                     setTitle(R.string.tuibutiaozheng);
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 06 57 02");
-                    startAnimation(R.drawable.weitiao_tuibu_top_animation);
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 07 96 C2");
+                    startAnimation(R.drawable.weitiao_tuibu_bottom_animation);
                 } else if (isUPorCancel(event.getAction())) {
                     setTopIconAndTitle(R.mipmap.animation_tuibutiaozheng_1, R.string.tuibutiaozheng);
                     sendBlueCmd("FF FF FF FF 05 00 00 00 00 D7 00");
@@ -256,16 +256,16 @@ public class WeitiaoW3Fragment extends WeitiaoBaseFragment implements View.OnTou
                     sendBlueCmd("FF FF FF FF 05 00 05 00 E4 C7 4A");
                 }
                 break;
+            case R.id.view_beituixunhuan:
+                setTopIconAndTitle(R.mipmap.xr_zhihan_da, R.string.beibuxunhuan);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 05 00 E8 C7 4F");
+                }
+                break;
             case R.id.view_yaobuxunhuan:
                 setTopIconAndTitle(R.mipmap.xr_tunbuxunhuan_da, R.string.yaobuxunhuan);
                 if (MotionEvent.ACTION_DOWN == action) {
                     sendBlueCmd("FF FF FF FF 05 00 05 00 E6 46 8B");
-                }
-                break;
-            case R.id.view_beibuxunhuan:
-                setTopIconAndTitle(R.mipmap.xr_zhihan_da, R.string.beibuxunhuan);
-                if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 05 00 E8 C7 4F");
                 }
                 break;
             case R.id.view_tuibuxunhuan:

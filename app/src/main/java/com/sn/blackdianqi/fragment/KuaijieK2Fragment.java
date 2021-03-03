@@ -220,31 +220,31 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
             if (isJIYIxunwenma2()) {
                 // 记忆1
                 sendAskBlueCmd("FF FF FF FF 03 00 28 00 03 9F 09");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 记忆2
                 sendAskBlueCmd("FF FF FF FF 03 00 30 00 03 1F 0E");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 看电视
                 sendAskBlueCmd("FF FF FF FF 03 00 18 00 03 9F 06");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 零压力
                 sendAskBlueCmd("FF FF FF FF 03 00 20 00 03 1E CB");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 止鼾
                 sendAskBlueCmd("FF FF FF FF 03 00 38 00 03 9E CC");
             } else {
                 // 记忆1
                 sendAskBlueCmd("FF FF FF FF 03 00 28 00 09 1F 0E");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 记忆2
                 sendAskBlueCmd("FF FF FF FF 03 00 31 00 09 CE C9");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 看电视
                 sendAskBlueCmd("FF FF FF FF 03 00 16 00 09 7E C2");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 零压力
                 sendAskBlueCmd("FF FF FF FF 03 00 1F 00 09 AE C0");
-                Thread.sleep(300L);
+                Thread.sleep(500L);
                 // 止鼾
                 sendAskBlueCmd("FF FF FF FF 03 00 3A 00 09 BF 0B");
             }
@@ -450,7 +450,7 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
      * @return
      */
     private boolean isJIYIxunwenma2() {
-        if ("QMS-MQ".equals(blueDeviceName) || "QMS2".equals(blueDeviceName)) {
+        if ("QMS-MQ".contains(blueDeviceName) || "QMS2".contains(blueDeviceName)) {
             return true;
         }
         return false;

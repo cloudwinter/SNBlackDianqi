@@ -129,6 +129,11 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -143,6 +148,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         if (deviceBean != null) {
             blueName = deviceBean.getTitle();
         }
+        LogUtils.e(TAG,"当前连接的蓝牙名称为："+blueName);
         initView();
         setCurrentTab(1);
 
@@ -183,26 +189,26 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         if (TextUtils.isEmpty(blueName)) {
             fragments.add(new KuaijieK1Fragment());
             fragments.add(new WeitiaoW1Fragment());
-        } else if (blueName.equals("QMS-IQ") || blueName.equals("QMS-I06")
-                || blueName.equals("QMS-LQ") || blueName.equals("QMS-L04")) {
+        } else if (blueName.contains("QMS-IQ") || blueName.contains("QMS-I06")
+                || blueName.contains("QMS-LQ") || blueName.contains("QMS-L04")) {
             fragments.add(new KuaijieK1Fragment());
             fragments.add(new WeitiaoW1Fragment());
-        } else if (blueName.equals("QMS-JQ-D") || blueName.equals("QMS4")) {
+        } else if (blueName.contains("QMS-JQ-D") || blueName.contains("QMS4")) {
             fragments.add(new KuaijieK2Fragment());
             fragments.add(new WeitiaoW2Fragment());
-        } else if (blueName.equals("QMS-NQ") || blueName.equals("QMS3")) {
+        } else if (blueName.contains("QMS-NQ") || blueName.contains("QMS3")) {
             fragments.add(new KuaijieK2Fragment());
             fragments.add(new WeitiaoW3Fragment());
-        } else if (blueName.equals("QMS-MQ") || blueName.equals("QMS2")) {
+        } else if (blueName.contains("QMS-MQ") || blueName.contains("QMS2")) {
             fragments.add(new KuaijieK2Fragment());
             fragments.add(new WeitiaoW4Fragment());
-        } else if (blueName.equals("QMS-KQ-H") || blueName.equals("QMS-H02")) {
+        } else if (blueName.contains("QMS-KQ-H") || blueName.contains("QMS-H02")) {
             fragments.add(new KuaijieK3Fragment());
             fragments.add(new WeitiaoW6Fragment());
-        } else if (blueName.equals("QMS-DFQ") || blueName.equals("QMS-430") || blueName.equals("QMS-444")) {
+        } else if (blueName.contains("QMS-DFQ") || blueName.contains("QMS-430") || blueName.contains("QMS-444")) {
             fragments.add(new KuaijieK4Fragment());
             fragments.add(new WeitiaoW7Fragment());
-        } else if (blueName.equals("QMS-DQ") || blueName.equals("QMS-443")) {
+        } else if (blueName.contains("QMS-DQ") || blueName.contains("QMS-443")) {
             fragments.add(new KuaijieK5Fragment());
             fragments.add(new WeitiaoW8Fragment());
         } else {

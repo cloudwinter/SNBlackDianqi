@@ -122,14 +122,15 @@ public class BaseActivity extends AppCompatActivity {
         Resources resources = getResources();
         Configuration config = resources.getConfiguration();
         DisplayMetrics dm = resources.getDisplayMetrics();
-        config.locale = Locale.ENGLISH;
+        if (language.equals("fr")) {
+            config.locale = Locale.FRENCH;
+        } else {
+            config.locale = Locale.ENGLISH;
+        }
         if (resources.getConfiguration().fontScale != 1) {
             config.fontScale = 1.0f;
         }
         Log.d("BaseActivity", "densityDpi="+config.densityDpi);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            config.densityDpi = LocaleUtils.getDefaultDisplayDensity();
-//        }
         resources.updateConfiguration(config, dm);
 
     }
