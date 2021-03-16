@@ -187,8 +187,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
 
     private void setFragments() {
         if (TextUtils.isEmpty(blueName)) {
-            fragments.add(new KuaijieK5Fragment());
-            fragments.add(new WeitiaoW8Fragment());
+            fragments.add(new KuaijieK1Fragment());
+            fragments.add(new WeitiaoW1Fragment());
         } else if (blueName.contains("QMS-IQ") || blueName.contains("QMS-I06")
                 || blueName.contains("QMS-LQ") || blueName.contains("QMS-L04")) {
             fragments.add(new KuaijieK1Fragment());

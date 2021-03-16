@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="@mipmap/ic_bg"
     android:orientation="vertical">
 
-    <com.sn.dianqi.view.TranslucentActionBar
+    <com.sn.blackdianqi.view.TranslucentActionBar
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -13,7 +13,7 @@
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        />
 
-    </WebView>
 </LinearLayout>

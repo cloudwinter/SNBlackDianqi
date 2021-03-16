@@ -61,7 +61,6 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
     abstract void askStatus();
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +69,7 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
         DeviceBean deviceBean = Prefer.getInstance().getConnectedDevice();
         if (deviceBean != null) {
             blueDeviceName = deviceBean.getTitle();
+            LogUtils.e(TAG, "blueDeviceName名称：" + blueDeviceName);
         }
         RunningContext.threadPool().execute(new Runnable() {
             @Override
@@ -105,6 +105,7 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
 
     /**
      * 发送记忆询问码的命令
+     *
      * @param cmd
      */
     protected void sendAskBlueCmd(final String cmd) {

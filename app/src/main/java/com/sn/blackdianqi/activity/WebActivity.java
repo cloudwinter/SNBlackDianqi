@@ -1,5 +1,8 @@
 package com.sn.blackdianqi.activity;
 
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -42,13 +45,14 @@ public class WebActivity extends BaseActivity implements TranslucentActionBar.Ac
         webView.setWebChromeClient(new WebChromeClient());
 
         WebSettings webSettings = webView.getSettings();
-        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);//把html中的内容放大webview等宽的一列中
+        //webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);//把html中的内容放大webview等宽的一列中
         webSettings.setJavaScriptEnabled(true);//支持js
         webSettings.setSupportZoom(true); // 可以缩放
         webSettings.setBuiltInZoomControls(true); // 显示放大缩小
 
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
+
 
     }
 
@@ -59,9 +63,9 @@ public class WebActivity extends BaseActivity implements TranslucentActionBar.Ac
         String url = "";
         String language = Prefer.getInstance().getSelectedLanguage();
         if ("en".equals(language)) {
-            url = "http://www.tri-mix.net/sweetnight.en.html";
+            url = "file:///android_res/mipmap/protocol_en.jpeg";
         } else {
-            url = "http://www.tri-mix.net/sweetnight.cn.html";
+            url = "file:///android_res/mipmap/protocol_fr.jpegg";
         }
         webView.loadUrl(url);
     }
@@ -75,4 +79,5 @@ public class WebActivity extends BaseActivity implements TranslucentActionBar.Ac
     public void onRightClick() {
 
     }
+
 }
