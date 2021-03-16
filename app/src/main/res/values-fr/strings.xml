@@ -84,8 +84,8 @@
     <!-- 按摩 -->
     <string name="anmopingdonghuaqu">MASSAGE</string>
     <string name="anmopinglv">Massage Vague</string>
-    <string name="toubuanmo">Massage de la tête</string>
-    <string name="zubuanmo">Massage des pieds</string>
+    <string name="toubuanmo">Massage du dos</string>
+    <string name="zubuanmo">Massage des jambes</string>
     <string name="tenmin">10 minutes</string>
     <string name="twentymin">20 minutes</string>
     <string name="thirtymin">30 minutes</string>
