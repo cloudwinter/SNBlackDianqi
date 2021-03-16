@@ -86,7 +86,6 @@ public class KuaijieK4Fragment extends KuaijieBaseFragment implements View.OnTou
         });
         ButterKnife.bind(this, view);
         initView();
-        askStatus();
         return view;
     }
 

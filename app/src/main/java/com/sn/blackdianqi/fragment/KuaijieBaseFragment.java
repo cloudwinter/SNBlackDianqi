@@ -75,7 +75,7 @@ public abstract class KuaijieBaseFragment extends BaseFragment {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1000L);
+                    Thread.sleep(300L);
                     askStatus();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
