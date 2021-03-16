@@ -84,8 +84,8 @@
     <!-- 按摩 -->
     <string name="anmopingdonghuaqu">MASSAGE</string>
     <string name="anmopinglv">Mass Wave</string>
-    <string name="toubuanmo">Head Mass</string>
-    <string name="zubuanmo">Foot Mass</string>
+    <string name="toubuanmo">Back Mass</string>
+    <string name="zubuanmo">Leg Mass</string>
     <string name="tenmin">10min</string>
     <string name="twentymin">20min</string>
     <string name="thirtymin">30min</string>
