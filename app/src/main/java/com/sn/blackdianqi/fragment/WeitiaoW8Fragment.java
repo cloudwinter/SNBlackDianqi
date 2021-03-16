@@ -70,7 +70,7 @@ public class WeitiaoW8Fragment extends WeitiaoBaseFragment implements View.OnTou
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        View view = inflater.inflate(R.layout.fragment_weitiao_w7, container, false);
+        View view = inflater.inflate(R.layout.fragment_weitiao_w8, container, false);
         ButterKnife.bind(this, view);
         initView();
         return view;

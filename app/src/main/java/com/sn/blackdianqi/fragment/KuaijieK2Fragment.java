@@ -149,7 +149,7 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
             }
 
         } else {
-            if (data.contains("FF FF FF FF 03 12 00 AA ")) {
+            if (data.contains("FF FF FF FF 03 12 00 AA")) {
                 // 记忆1有记忆返回码
                 jiyi1View.setSelected(true);
             }

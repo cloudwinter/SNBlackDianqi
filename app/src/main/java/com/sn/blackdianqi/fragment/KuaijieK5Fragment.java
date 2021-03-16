@@ -49,9 +49,9 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
     @BindView(R.id.view_fenti_jiyi_right)
     AnjianTuoYuanView fentiJiyiRightView;
     @BindView(R.id.view_fenti_fuyuan_left)
-    AnjianChangTuoYuanView fentiFuyuanLeftView;
+    AnjianTuoYuanView fentiFuyuanLeftView;
     @BindView(R.id.view_fenti_fuyuan_right)
-    AnjianChangTuoYuanView fentiFuyuanRightView;
+    AnjianTuoYuanView fentiFuyuanRightView;
 
 
     // 同步
@@ -60,9 +60,9 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
     @BindView(R.id.view_tongbu)
     JiyiView tongbuView;
     @BindView(R.id.view_tongbu_jiyi_left)
-    AnjianChangTuoYuanView tongbuJiyiLeftView;
+    AnjianTuoYuanView tongbuJiyiLeftView;
     @BindView(R.id.view_tongbu_jiyi_right)
-    AnjianChangTuoYuanView tongbuJiyiRightView;
+    AnjianTuoYuanView tongbuJiyiRightView;
     @BindView(R.id.view_tongbu_kandianshi)
     AnjianChangTuoYuanView tongbuKandianshiView;
     @BindView(R.id.view_tongbu_fuyuan)
@@ -190,7 +190,7 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
         }
     }
     @Override
-    void askStatus() {
+    protected void askStatus() {
         try {
             // 看电视左
             sendAskBlueCmd("FF FF FF FF 03 00 64 00 09 DE D9");
