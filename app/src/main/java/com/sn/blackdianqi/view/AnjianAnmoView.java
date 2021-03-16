@@ -107,19 +107,41 @@ public class AnjianAnmoView extends RelativeLayout implements View.OnClickListen
                 line1View.setVisibility(INVISIBLE);
                 line2View.setVisibility(INVISIBLE);
                 line3View.setVisibility(INVISIBLE);
-                line4View.setVisibility(INVISIBLE);
+                if (lineCount == 4) {
+                    line4View.setVisibility(INVISIBLE);
+                } else {
+                    line4View.setVisibility(GONE);
+                }
                 break;
             case 1:
                 line1View.setVisibility(VISIBLE);
+                line2View.setVisibility(INVISIBLE);
+                line3View.setVisibility(INVISIBLE);
+                if (lineCount == 4) {
+                    line4View.setVisibility(INVISIBLE);
+                } else {
+                    line4View.setVisibility(GONE);
+                }
                 break;
             case 2:
                 line1View.setVisibility(VISIBLE);
                 line2View.setVisibility(VISIBLE);
+                line3View.setVisibility(INVISIBLE);
+                if (lineCount == 4) {
+                    line4View.setVisibility(INVISIBLE);
+                } else {
+                    line4View.setVisibility(GONE);
+                }
                 break;
             case 3:
                 line1View.setVisibility(VISIBLE);
                 line2View.setVisibility(VISIBLE);
                 line3View.setVisibility(VISIBLE);
+                if (lineCount == 4) {
+                    line4View.setVisibility(INVISIBLE);
+                } else {
+                    line4View.setVisibility(GONE);
+                }
                 break;
             case 4:
                 line1View.setVisibility(VISIBLE);

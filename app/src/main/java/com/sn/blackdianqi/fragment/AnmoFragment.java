@@ -208,55 +208,57 @@ public class AnmoFragment extends BaseFragment implements View.OnClickListener {
 
 
     protected void handleReceiveData(String data) {
-        if (data.contains("FF FF FF FF 05 00 00 01 00 D6 90")) {
-            // 头部按摩停止
-            anmoToubuView.setLevel(0);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 01 1E 56 98")) {
-            // 头部按摩一档
-            anmoToubuView.setLevel(1);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 01 1F 97 58")) {
-            // 头部按摩二档
-            anmoToubuView.setLevel(2);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 01 20 D7 48")) {
-            // 头部按摩三档
-            anmoToubuView.setLevel(3);
-        }
-
-        if (data.contains("FF FF FF FF 05 00 00 02 00 D6 60")) {
-            // 足部按摩停止
-            anmoZubuView.setLevel(0);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 02 21 16 78")) {
-            // 足部按摩一档
-            anmoZubuView.setLevel(1);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 02 22 56 79")) {
-            // 足部按摩二档
-            anmoZubuView.setLevel(2);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 02 23 97 B9")) {
-            // 足部按摩三档
-            anmoZubuView.setLevel(3);
-        }
-
-        if (data.contains("FF FF FF FF 05 00 00 03 24 D7 EB")) {
-            // 按摩频率1档
-            anmoPinglvView.setLevel(1);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 03 25 16 2B")) {
-            // 按摩频率2档
-            anmoPinglvView.setLevel(2);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 03 26 56 2A")) {
-            // 按摩频率3档
-            anmoPinglvView.setLevel(3);
-        }
-        if (data.contains("FF FF FF FF 05 00 00 03 27 97 EA")) {
-            // 按摩频率4档
-            anmoPinglvView.setLevel(4);
+        if (data.contains("FF FF FF FF 05 00 00 01")) {
+            if (data.contains("FF FF FF FF 05 00 00 01 00 D6 90")) {
+                // 头部按摩停止
+                anmoToubuView.setLevel(0);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 01 1E 56 98")) {
+                // 头部按摩一档
+                anmoToubuView.setLevel(1);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 01 1F 97 58")) {
+                // 头部按摩二档
+                anmoToubuView.setLevel(2);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 01 20 D7 48")) {
+                // 头部按摩三档
+                anmoToubuView.setLevel(3);
+            }
+        } else if (data.contains("FF FF FF FF 05 00 00 02")) {
+            if (data.contains("FF FF FF FF 05 00 00 02 00 D6 60")) {
+                // 足部按摩停止
+                anmoZubuView.setLevel(0);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 02 21 16 78")) {
+                // 足部按摩一档
+                anmoZubuView.setLevel(1);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 02 22 56 79")) {
+                // 足部按摩二档
+                anmoZubuView.setLevel(2);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 02 23 97 B9")) {
+                // 足部按摩三档
+                anmoZubuView.setLevel(3);
+            }
+        } else if (data.contains("FF FF FF FF 05 00 00 03")) {
+            if (data.contains("FF FF FF FF 05 00 00 03 24 D7 EB")) {
+                // 按摩频率1档
+                anmoPinglvView.setLevel(1);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 03 25 16 2B")) {
+                // 按摩频率2档
+                anmoPinglvView.setLevel(2);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 03 26 56 2A")) {
+                // 按摩频率3档
+                anmoPinglvView.setLevel(3);
+            }
+            if (data.contains("FF FF FF FF 05 00 00 03 27 97 EA")) {
+                // 按摩频率4档
+                anmoPinglvView.setLevel(4);
+            }
         }
     }
 
