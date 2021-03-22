@@ -74,6 +74,8 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
     // 是否是第一次扫描
     protected boolean isFirstScan = false;
 
+    protected List<String> blueNameList;
+
 
     @BindView(R.id.actionbar)
     TranslucentActionBar titleBar;
@@ -138,6 +140,7 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
         ButterKnife.bind(this);
+        blueNameList = defindeBlueNameList();
         // 设置title
         mFrom = getIntent().getStringExtra("from");
         titleBar.setData(getString(R.string.blue_equipment), R.mipmap.ic_back, null, 0, null, this);
@@ -355,9 +358,9 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
                         if (TextUtils.isEmpty(deviceName)) {
                             return;
                         }
-//                        if (!deviceName.contains("QMS")) {
-//                            return;
-//                        }
+                        if (!isContain(deviceName)) {
+                            return;
+                        }
                         //LogUtils.i(TAG, "搜索到蓝牙设备信息：" + device.getName()+" "+device.getAddress());
                         String latelyConnectedDevice = Prefer.getInstance().getLatelyConnectedDevice();
                         if (device.getAddress().equals(latelyConnectedDevice)) {
@@ -532,7 +535,7 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
 
 
 
-    private List<String> blueName() {
+    private List<String> defindeBlueNameList() {
         List<String> blueNameList = new ArrayList<>();
         blueNameList.add("QMS-IQ");
         blueNameList.add("QMS-I06");
@@ -559,6 +562,19 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
         blueNameList.add("QMS-443");
 
         return blueNameList;
+    }
+
+
+    private boolean isContain(String blueName) {
+        if (TextUtils.isEmpty(blueName)) {
+            return false;
+        }
+        for (String item : blueNameList) {
+            if (item.contains(blueName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

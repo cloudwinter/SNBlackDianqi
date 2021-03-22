@@ -40,18 +40,16 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
     LinearLayout fentiLayout;
     @BindView(R.id.view_fenti)
     JiyiView fentiView;
-    @BindView(R.id.view_fenti_kandianshi_left)
-    AnjianTuoYuanView fentiKandianshiLeftView;
-    @BindView(R.id.view_fenti_kandianshi_right)
-    AnjianTuoYuanView fentiKandianshiRightView;
     @BindView(R.id.view_fenti_jiyi_left)
     AnjianTuoYuanView fentiJiyiLeftView;
     @BindView(R.id.view_fenti_jiyi_right)
     AnjianTuoYuanView fentiJiyiRightView;
-    @BindView(R.id.view_fenti_fuyuan_left)
-    AnjianTuoYuanView fentiFuyuanLeftView;
-    @BindView(R.id.view_fenti_fuyuan_right)
-    AnjianTuoYuanView fentiFuyuanRightView;
+    @BindView(R.id.view_fenti_kandianshi_left)
+    AnjianTuoYuanView fentiKandianshiLeftView;
+    @BindView(R.id.view_fenti_kandianshi_right)
+    AnjianTuoYuanView fentiKandianshiRightView;
+    @BindView(R.id.view_fenti_fuyuan)
+    AnjianChangTuoYuanView fentiFuyuanView;
 
 
     // 同步
@@ -97,8 +95,7 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
         fentiKandianshiRightView.setOnTouchListener(this);
         fentiJiyiLeftView.setOnTouchListener(this);
         fentiJiyiRightView.setOnTouchListener(this);
-        fentiFuyuanLeftView.setOnTouchListener(this);
-        fentiFuyuanRightView.setOnTouchListener(this);
+        fentiFuyuanView.setOnTouchListener(this);
 
         tongbuLayout.setOnTouchListener(this);
         tongbuView.setOnTouchListener(this);
@@ -228,6 +225,36 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
                     timeHandler.removeMessages(TONGBU_WHAT);
                 }
                 break;
+            case R.id.view_fenti_jiyi_left:
+                setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.jiyi);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    eventDownTime = System.currentTimeMillis();
+                    timeHandler.sendEmptyMessageDelayed(FENTI_JIYI_LEFT_WHAT, DEFAULT_INTERVAL);
+                } else if (MotionEvent.ACTION_UP == action) {
+                    timeHandler.removeMessages(FENTI_JIYI_LEFT_WHAT);
+                    if (isShortClick()) {
+                        // 短按
+                        if (fentiJiyiLeftView.isSelected()) {
+                            sendBlueCmd("FF FF FF FF 05 00 00 31 33 82 85");
+                        }
+                    }
+                }
+                break;
+            case R.id.view_fenti_jiyi_right:
+                setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.jiyi);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    eventDownTime = System.currentTimeMillis();
+                    timeHandler.sendEmptyMessageDelayed(FENTI_JIYI_RIGHT_WHAT, DEFAULT_INTERVAL);
+                } else if (MotionEvent.ACTION_UP == action) {
+                    timeHandler.removeMessages(FENTI_JIYI_RIGHT_WHAT);
+                    if (isShortClick()) {
+                        // 短按
+                        if (fentiJiyiLeftView.isSelected()) {
+                            sendBlueCmd("FF FF FF FF 05 00 00 41 34 E6 87");
+                        }
+                    }
+                }
+                break;
             case R.id.view_fenti_kandianshi_left:
                 setTopIconAndTitle(R.mipmap.xr_kandianshi_da, R.string.kandianshi);
                 if (MotionEvent.ACTION_DOWN == action) {
@@ -295,16 +322,41 @@ public class KuaijieK5Fragment extends KuaijieBaseFragment implements View.OnTou
                     }
                 }
                 break;
-            case R.id.view_fenti_fuyuan_left:
+            case R.id.view_fenti_fuyuan:
                 setTopIconAndTitle(R.mipmap.xr_fuyuan_da, R.string.fuyuan);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 39 17 12");
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 08 D6 C6");
                 }
                 break;
-            case R.id.view_fenti_fuyuan_right:
-                setTopIconAndTitle(R.mipmap.xr_fuyuan_da, R.string.fuyuan);
+
+            case R.id.view_tongbu_jiyi_left:
+                setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.jiyi);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 3A 57 13");
+                    eventDownTime = System.currentTimeMillis();
+                    timeHandler.sendEmptyMessageDelayed(TONGBU_JIYI_LEFT_WHAT, DEFAULT_INTERVAL);
+                } else if (MotionEvent.ACTION_UP == action) {
+                    timeHandler.removeMessages(TONGBU_JIYI_LEFT_WHAT);
+                    if (isShortClick()) {
+                        // 短按
+                        if (fentiJiyiLeftView.isSelected()) {
+                            sendBlueCmd("FF FF FF FF 05 00 00 31 33 82 85");
+                        }
+                    }
+                }
+                break;
+            case R.id.view_tongbu_jiyi_right:
+                setTopIconAndTitle(R.mipmap.xr_lingyali_da, R.string.jiyi);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    eventDownTime = System.currentTimeMillis();
+                    timeHandler.sendEmptyMessageDelayed(TONGBU_JIYI_RIGHT_WHAT, DEFAULT_INTERVAL);
+                } else if (MotionEvent.ACTION_UP == action) {
+                    timeHandler.removeMessages(TONGBU_JIYI_RIGHT_WHAT);
+                    if (isShortClick()) {
+                        // 短按
+                        if (fentiJiyiLeftView.isSelected()) {
+                            sendBlueCmd("FF FF FF FF 05 00 00 41 34 E6 87");
+                        }
+                    }
                 }
                 break;
             case R.id.view_tongbu_kandianshi:

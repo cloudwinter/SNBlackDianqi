@@ -3,6 +3,7 @@ package com.sn.blackdianqi.fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -449,7 +450,10 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
      * @return
      */
     private boolean isJIYIxunwenma2() {
-        if ("QMS-MQ".contains(blueDeviceName) || "QMS2".contains(blueDeviceName)) {
+        if (TextUtils.isEmpty(blueDeviceName)) {
+            return false;
+        }
+        if (blueDeviceName.contains("QMS-MQ") || blueDeviceName.contains("QMS2")) {
             return true;
         }
         return false;
