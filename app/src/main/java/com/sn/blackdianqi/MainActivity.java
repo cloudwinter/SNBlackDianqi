@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        imageView.setImageResource(R.mipmap.ic_logo);
+        imageView.setImageResource(R.mipmap.app_logo_small);
         textView.setOnClickListener(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

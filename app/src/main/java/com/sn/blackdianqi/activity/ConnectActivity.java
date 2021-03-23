@@ -361,7 +361,7 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
                         if (!isContain(deviceName)) {
                             return;
                         }
-                        //LogUtils.i(TAG, "搜索到蓝牙设备信息：" + device.getName()+" "+device.getAddress());
+                        LogUtils.e(TAG, "过滤到蓝牙设备信息：" + device.getName()+" "+device.getAddress());
                         String latelyConnectedDevice = Prefer.getInstance().getLatelyConnectedDevice();
                         if (device.getAddress().equals(latelyConnectedDevice)) {
                             if (("main").equals(mFrom) && isFirstScan) {
@@ -561,6 +561,8 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
         blueNameList.add("QMS-DQ");
         blueNameList.add("QMS-443");
 
+        //blueNameList.add("QMS-J04");
+
         return blueNameList;
     }
 
@@ -569,8 +571,11 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
         if (TextUtils.isEmpty(blueName)) {
             return false;
         }
+        if (blueNameList == null || blueNameList.size() <= 0) {
+            blueNameList = defindeBlueNameList();
+        }
         for (String item : blueNameList) {
-            if (item.contains(blueName)) {
+            if (blueName.contains(item)) {
                 return true;
             }
         }
