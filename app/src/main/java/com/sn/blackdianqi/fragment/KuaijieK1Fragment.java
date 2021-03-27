@@ -49,16 +49,23 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
     AnjianYuanView kandianshiView;
     @BindView(R.id.view_lingyali)
     AnjianYuanView lingyaliView;
-
     @BindView(R.id.view_zhihan)
     AnjianYuanView zhihanView;
+
     @BindView(R.id.view_fuyuan)
     AnjianYuanView fuyuanView;
-
     @BindView(R.id.view_tingyinyue)
     AnjianYuanView tingyinyueView;
     @BindView(R.id.view_tuibufangsong)
     AnjianYuanView tuibufangsongView;
+
+
+    @BindView(R.id.view_quanshengxunhuan)
+    AnjianYuanView quanshengxunhuanView;
+    @BindView(R.id.view_yujia)
+    AnjianYuanView yujiaView;
+    @BindView(R.id.view_tunbuxunhuan)
+    AnjianYuanView tunbuxunhuanView;
 
     private long eventDownTime = 0L;
 
@@ -90,6 +97,10 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
         fuyuanView.setOnTouchListener(this);
         tingyinyueView.setOnTouchListener(this);
         tuibufangsongView.setOnTouchListener(this);
+
+        quanshengxunhuanView.setOnTouchListener(this);
+        yujiaView.setOnTouchListener(this);
+        tunbuxunhuanView.setOnTouchListener(this);
 
     }
 
@@ -330,6 +341,25 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
                     sendBlueCmd("FF FF FF FF 05 00 00 00 29 16 DE");
                 }
                 break;
+            case R.id.view_quanshengxunhuan:
+                setTopIconAndTitle(R.mipmap.xr_quanshenxunhuan_da,R.string.quanshenxunhuan);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 05 00 E4 C7 4A");
+                }
+                break;
+            case R.id.view_yujia:
+                setTopIconAndTitle(R.mipmap.xr_tunbuxunhuan_da,R.string.yujia);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 0D 16 C5");
+                }
+                break;
+            case R.id.view_tunbuxunhuan:
+                setTopIconAndTitle(R.mipmap.xr_tunbuxunhuan_da,R.string.tunbuxunhuan);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 05 00 E6 46 8B");
+                }
+                break;
+
         }
         return true;
     }

@@ -209,6 +209,69 @@
 
     </LinearLayout>
 
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="37"/>
+
+            <com.sn.blackdianqi.view.AnjianYuanView
+                android:id="@+id/view_quanshengxunhuan"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
+                app:title="@string/quanshenxunhuan"
+                app:icon="@mipmap/xr_quanshengxunhuan_xiao"
+                app:bgnormal="@drawable/bg_yuan_normal"
+                app:bgselected="@drawable/bg_yuan_selected"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"/>
+
+
+            <com.sn.blackdianqi.view.AnjianYuanView
+                android:id="@+id/view_yujia"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
+                app:title="@string/yujia"
+                app:icon="@mipmap/xr_tunbuxunhuan_xiao"
+                app:bgnormal="@drawable/bg_yuan_normal"
+                app:bgselected="@drawable/bg_yuan_selected"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"/>
+
+
+            <com.sn.blackdianqi.view.AnjianYuanView
+                android:id="@+id/view_tunbuxunhuan"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
+                app:title="@string/tunbuxunhuan"
+                app:icon="@mipmap/xr_tunbuxunhuan_xiao"
+                app:bgnormal="@drawable/bg_yuan_normal"
+                app:bgselected="@drawable/bg_yuan_selected"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="37"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
