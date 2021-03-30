@@ -121,7 +121,7 @@
             android:layout_marginTop="@dimen/weitiao_marin"
             android:layout_marginRight="@dimen/weitiao_marin"
             app:bgnormal="@drawable/bg_tuoyuan_normal"
-            app:icon="@mipmap/ic_toubuanmo"
+            app:icon="@mipmap/ic_beibuanmo"
             app:title="@string/toubuanmo"
             app:linecount="3"/>
 
