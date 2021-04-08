@@ -172,7 +172,6 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
         }
 
 
-
         // 记忆1 按键回码
         if (data.contains("FF FF FF FF 05 00 00 A0 0A 2F 07")) {
             jiyi1View.setSelected(true);
@@ -453,7 +452,8 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
         if (TextUtils.isEmpty(blueDeviceName)) {
             return false;
         }
-        if (blueDeviceName.contains("QMS-MQ") || blueDeviceName.contains("QMS2")) {
+        if (blueDeviceName.contains("QMS-MQ") || blueDeviceName.contains("QMS2")
+                || blueDeviceName.contains("S3-2")) {
             return true;
         }
         return false;

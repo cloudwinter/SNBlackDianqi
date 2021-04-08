@@ -155,15 +155,15 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
             // 记忆2有记忆返回码
             jiyi2View.setSelected(true);
         }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
+        if (data.contains("FF FF FF FF 03 12 00 A5")) {
             // 看电视
             kandianshiView.setSelected(true);
         }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
+        if (data.contains("FF FF FF FF 03 12 00 A9")) {
             // 零压力
             lingyaliView.setSelected(true);
         }
-        if (data.contains("FF FF FF FF 03 12 00 00")) {
+        if (data.contains("FF FF FF FF 03 12 00 AF")) {
             // 止鼾
             zhihanView.setSelected(true);
         }

@@ -259,7 +259,7 @@
                 android:layout_width="@dimen/anjian_yuan_size"
                 android:layout_height="@dimen/anjian_yuan_size"
                 app:title="@string/tunbuxunhuan"
-                app:icon="@mipmap/xr_tunbuxunhuan_xiao"
+                app:icon="@mipmap/kj_tunbuxunhuan_xiao"
                 app:bgnormal="@drawable/bg_yuan_normal"
                 app:bgselected="@drawable/bg_yuan_selected"
                 />
