@@ -30,6 +30,7 @@ import com.sn.blackdianqi.fragment.KuaijieK2Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK3Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK4Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK5Fragment;
+import com.sn.blackdianqi.fragment.WeitiaoW10Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW1Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW2Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW3Fragment;
@@ -211,6 +212,9 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         } else if (blueName.contains("QMS-DQ") || blueName.contains("QMS-443")) {
             fragments.add(new KuaijieK5Fragment());
             fragments.add(new WeitiaoW8Fragment());
+        } else if (blueName.contains("S3-2")) {
+            fragments.add(new KuaijieK2Fragment());
+            fragments.add(new WeitiaoW10Fragment());
         } else {
             fragments.add(new KuaijieK1Fragment());
             fragments.add(new WeitiaoW1Fragment());
