@@ -274,7 +274,7 @@ public class KuaijieK3Fragment extends KuaijieBaseFragment implements View.OnTou
             case R.id.view_fuyuan:
                 setTopIconAndTitle(R.mipmap.xr_fuyuan_da, R.string.fuyuan);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 08 D6 C6");
+                    sendBlueCmd("FF FF FF FF 05 00 00 F1 0F D2 94");
                 }
                 break;
         }
