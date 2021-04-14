@@ -28,7 +28,6 @@ public class RunningContext {
     public static boolean debug = false;
 
 
-
     /**
      * 动态申请权限request_code
      */
@@ -57,7 +56,6 @@ public class RunningContext {
     public static void init(Application app) {
         sAppContext = app.getApplicationContext();
     }
-
 
 
     /**
@@ -175,6 +173,26 @@ public class RunningContext {
             LogUtils.i("checkLocationPermission 检查定位权限 定时任务结果：" + granted);
         }
 
+
+//        boolean foreground = ActivityCompat.checkSelfPermission(sAppContext,
+//                Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+//
+//        if (foreground) {
+//            boolean background = ActivityCompat.checkSelfPermission(activity,
+//                    Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED;
+//
+//            if (background) {
+//                granted = true;
+//            } else {
+//                ActivityCompat.requestPermissions(activity,
+//                        new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, PERMISSIONS_REQUEST_CODE);
+//            }
+//        } else {
+//            ActivityCompat.requestPermissions(activity,
+//                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+//                            Manifest.permission.ACCESS_BACKGROUND_LOCATION}, PERMISSIONS_REQUEST_CODE);
+//
+//        }
         return granted;
     }
 

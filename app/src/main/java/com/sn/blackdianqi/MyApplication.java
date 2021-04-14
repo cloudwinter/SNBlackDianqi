@@ -23,13 +23,11 @@ import com.sn.blackdianqi.blue.BluetoothLeService;
 import com.sn.blackdianqi.core.AppUncaughtExceptionHandler;
 import com.sn.blackdianqi.file.FileUtils;
 import com.sn.blackdianqi.util.LogUtils;
-import com.sn.blackdianqi.util.Prefer;
 import com.sn.blackdianqi.util.ScreenUtils;
 import com.sn.blackdianqi.view.LoggerView;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import org.xutils.x;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -83,7 +81,6 @@ public class MyApplication extends Application {
         // 获取手机本地的蓝牙适配器
         final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = bluetoothManager.getAdapter();
-        x.Ext.init(this);
 
         // 初始化Bugly
         initBugly();
