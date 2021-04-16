@@ -345,7 +345,7 @@ public class KuaijieK1Fragment extends KuaijieBaseFragment implements View.OnTou
             case R.id.view_yujia:
                 setTopIconAndTitle(R.mipmap.xr_yujia_da,R.string.yujia);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 0D 16 C5");
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 4E 57 34");
                 }
                 break;
             case R.id.view_tunbuxunhuan:
