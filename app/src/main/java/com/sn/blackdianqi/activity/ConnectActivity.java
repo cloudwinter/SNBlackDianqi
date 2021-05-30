@@ -562,6 +562,8 @@ public class ConnectActivity extends BaseActivity implements TranslucentActionBa
         blueNameList.add("QMS-443");
 
         blueNameList.add("S3-2");
+        blueNameList.add("S3-3");
+        blueNameList.add("S3-4");
 
         return blueNameList;
     }

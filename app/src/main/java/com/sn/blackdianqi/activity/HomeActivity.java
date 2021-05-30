@@ -30,6 +30,7 @@ import com.sn.blackdianqi.fragment.KuaijieK2Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK3Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK4Fragment;
 import com.sn.blackdianqi.fragment.KuaijieK5Fragment;
+import com.sn.blackdianqi.fragment.KuaijieK8Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW10Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW1Fragment;
 import com.sn.blackdianqi.fragment.WeitiaoW2Fragment;
@@ -149,7 +150,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         if (deviceBean != null) {
             blueName = deviceBean.getTitle();
         }
-        LogUtils.e(TAG,"当前连接的蓝牙名称为："+blueName);
+        LogUtils.e(TAG, "当前连接的蓝牙名称为：" + blueName);
         initView();
         setCurrentTab(1);
 
@@ -215,6 +216,12 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         } else if (blueName.contains("S3-2")) {
             fragments.add(new KuaijieK2Fragment());
             fragments.add(new WeitiaoW10Fragment());
+        } else if (blueName.contains("S3-3")) {
+            fragments.add(new KuaijieK8Fragment());
+            fragments.add(new WeitiaoW11Fragment());
+        } else if (blueName.contains("S3-3")) {
+            fragments.add(new KuaijieK9Fragment());
+            fragments.add(new WeitiaoW11Fragment());
         } else {
             fragments.add(new KuaijieK1Fragment());
             fragments.add(new WeitiaoW1Fragment());
