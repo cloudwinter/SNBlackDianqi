@@ -93,12 +93,27 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2" />
+                android:layout_weight="37" />
+
+
+            <com.sn.blackdianqi.view.AnjianYuanView
+                android:id="@+id/view_yijiangshengqi"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
+                app:bgnormal="@drawable/bg_yuan_normal"
+                app:bgselected="@drawable/bg_yuan_selected"
+                app:icon="@mipmap/xr_yijianshengqi_xiao"
+                app:title="@string/yijianshengqi" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30" />
 
             <com.sn.blackdianqi.view.AnjianYuanView
                 android:id="@+id/view_kandianshi"
-                android:layout_width="@dimen/anjian_middle_yuan_size"
-                android:layout_height="@dimen/anjian_middle_yuan_size"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
                 app:bgnormal="@drawable/bg_yuan_normal"
                 app:bgselected="@drawable/bg_yuan_selected"
                 app:icon="@mipmap/xr_kandianshi_xiao"
@@ -108,14 +123,14 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="30" />
 
 
 
             <com.sn.blackdianqi.view.AnjianYuanView
                 android:id="@+id/view_lingyali"
-                android:layout_width="@dimen/anjian_middle_yuan_size"
-                android:layout_height="@dimen/anjian_middle_yuan_size"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
                 app:bgnormal="@drawable/bg_yuan_normal"
                 app:bgselected="@drawable/bg_yuan_selected"
                 app:icon="@mipmap/xr_lingyali_xiao"
@@ -125,7 +140,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2" />
+                android:layout_weight="37" />
 
 
         </LinearLayout>
@@ -138,16 +153,33 @@
             android:layout_marginBottom="16dp"
             android:orientation="horizontal">
 
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2" />
+                android:layout_weight="37" />
+
+
+            <com.sn.blackdianqi.view.AnjianYuanView
+                android:id="@+id/view_yijiangjiangxia"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
+                app:bgnormal="@drawable/bg_yuan_normal"
+                app:bgselected="@drawable/bg_yuan_selected"
+                app:icon="@mipmap/xr_yijianjiangxia_xiao"
+                app:title="@string/yijianjiangxia" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30" />
 
 
             <com.sn.blackdianqi.view.AnjianYuanView
                 android:id="@+id/view_dingyao"
-                android:layout_width="@dimen/anjian_middle_yuan_size"
-                android:layout_height="@dimen/anjian_middle_yuan_size"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
                 app:bgnormal="@drawable/bg_yuan_normal"
                 app:bgselected="@drawable/bg_yuan_selected"
                 app:icon="@mipmap/xr_dingyao_xiao"
@@ -156,13 +188,13 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="30" />
 
 
             <com.sn.blackdianqi.view.AnjianYuanView
                 android:id="@+id/view_fuyuan"
-                android:layout_width="@dimen/anjian_middle_yuan_size"
-                android:layout_height="@dimen/anjian_middle_yuan_size"
+                android:layout_width="@dimen/anjian_yuan_size"
+                android:layout_height="@dimen/anjian_yuan_size"
                 app:bgnormal="@drawable/bg_yuan_normal"
                 app:bgselected="@drawable/bg_yuan_selected"
                 app:icon="@mipmap/xr_fuyuan_xiao"
@@ -171,7 +203,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2" />
+                android:layout_weight="37" />
 
 
         </LinearLayout>

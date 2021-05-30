@@ -49,6 +49,11 @@ public class KuaijieK3Fragment extends KuaijieBaseFragment implements View.OnTou
     @BindView(R.id.view_fuyuan)
     AnjianYuanView fuyuanView;
 
+    @BindView(R.id.view_yijiangshengqi)
+    AnjianYuanView shengqiView;
+    @BindView(R.id.view_yijiangjiangxia)
+    AnjianYuanView jiangxiaView;
+
 
     private long eventDownTime = 0L;
 
@@ -78,6 +83,9 @@ public class KuaijieK3Fragment extends KuaijieBaseFragment implements View.OnTou
         lingyaliView.setOnTouchListener(this);
         dingyaoView.setOnTouchListener(this);
         fuyuanView.setOnTouchListener(this);
+
+        shengqiView.setOnTouchListener(this);
+        jiangxiaView.setOnTouchListener(this);
 
     }
 
@@ -275,6 +283,20 @@ public class KuaijieK3Fragment extends KuaijieBaseFragment implements View.OnTou
                 setTopIconAndTitle(R.mipmap.xr_fuyuan_da, R.string.fuyuan);
                 if (MotionEvent.ACTION_DOWN == action) {
                     sendBlueCmd("FF FF FF FF 05 00 00 F1 0F D2 94");
+                }
+                break;
+
+            case R.id.view_yijiangshengqi:
+                setTopIconAndTitle(R.mipmap.xr_yijianshengqi_da, R.string.yijianshengqi);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 06 57 02");
+                }
+                break;
+
+            case R.id.view_yijiangjiangxia:
+                setTopIconAndTitle(R.mipmap.xr_yijianjiangxia_da, R.string.yijianjiangxia);
+                if (MotionEvent.ACTION_DOWN == action) {
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 07 96 C2");
                 }
                 break;
         }
