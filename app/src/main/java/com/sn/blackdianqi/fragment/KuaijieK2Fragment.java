@@ -453,7 +453,7 @@ public class KuaijieK2Fragment extends KuaijieBaseFragment implements View.OnTou
             return false;
         }
         if (blueDeviceName.contains("QMS-MQ") || blueDeviceName.contains("QMS2")
-                || blueDeviceName.contains("S3-2")) {
+                || blueDeviceName.contains("S3-2") || blueDeviceName.contains("QMS3")) {
             return true;
         }
         return false;
