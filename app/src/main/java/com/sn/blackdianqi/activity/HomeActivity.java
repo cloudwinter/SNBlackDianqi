@@ -221,7 +221,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener, 
         } else if (blueName.contains("S3-3")) {
             fragments.add(new KuaijieK8Fragment());
             fragments.add(new WeitiaoW11Fragment());
-        } else if (blueName.contains("S3-3")) {
+        } else if (blueName.contains("S3-4")) {
             fragments.add(new KuaijieK9Fragment());
             fragments.add(new WeitiaoW11Fragment());
         } else {
