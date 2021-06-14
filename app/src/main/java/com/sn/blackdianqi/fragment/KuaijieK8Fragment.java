@@ -283,7 +283,7 @@ public class KuaijieK8Fragment extends KuaijieBaseFragment implements View.OnTou
             case R.id.view_dingyao:
                 setTopIconAndTitle(R.mipmap.xr_dingyao_da, R.string.dingyao);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FF FF FF FF 05 00 00 00 2E 57 1C");
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 20 D6 D8");
                 }
                 break;
             case R.id.view_fuyuan:
@@ -303,7 +303,7 @@ public class KuaijieK8Fragment extends KuaijieBaseFragment implements View.OnTou
             case R.id.view_yijiangjiangxia:
                 setTopIconAndTitle(R.mipmap.xr_yijianjiangxia_da, R.string.yijianjiangxia);
                 if (MotionEvent.ACTION_DOWN == action) {
-                    sendBlueCmd("FFF FF FF FF 05 00 00 00 02 56 C1");
+                    sendBlueCmd("FF FF FF FF 05 00 00 00 02 56 C1");
                 }
                 break;
         }

@@ -18,6 +18,7 @@ import com.sn.blackdianqi.util.LogUtils;
 import com.sn.blackdianqi.util.Prefer;
 import com.sn.blackdianqi.util.PreferenceUtil;
 
+import java.util.List;
 import java.util.Locale;
 
 import androidx.annotation.Nullable;
@@ -34,6 +35,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MyApplication.getInstance().addActivity(this);
+
+
 
         //初始化PreferenceUtil
         PreferenceUtil.init(this);
