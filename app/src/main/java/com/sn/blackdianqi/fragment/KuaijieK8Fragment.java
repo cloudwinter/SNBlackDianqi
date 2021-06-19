@@ -16,6 +16,9 @@ import com.sn.blackdianqi.util.LogUtils;
 import com.sn.blackdianqi.view.AnjianYuanView;
 import com.sn.blackdianqi.view.JiyiView;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
